@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: mangam_development
+  reconnect: false
+  # Set these in .bashrc or .bash_profile
+  username: <%= ENV["PG_USER"] %> 
+  password: <%= ENV["PG_PASS"] %>
+  host: localhost
+  
+test:
+  <<: *default
+  database: mangam_test
+  reconnect: false
+  # Set these in .bashrc or .bash_profile
+  username: <%= ENV["PG_USER"] %> 
+  password: <%= ENV["PG_PASS"] %>
+  host: localhost
