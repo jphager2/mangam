@@ -1,4 +1,40 @@
 Rails.application.routes.draw do
+  get 'sessionss/add'
+
+  get 'sessionss/create'
+
+  get 'sessionss/edit'
+
+  get 'sessionss/update'
+
+  get 'sessionss/destroy'
+
+  get 'sessionss/read'
+
+  get 'likes/add'
+
+  get 'likes/create'
+
+  get 'likes/edit'
+
+  get 'likes/update'
+
+  get 'likes/destroy'
+
+  get 'likes/read'
+
+  get 'tags/add'
+
+  get 'tags/create'
+
+  get 'tags/edit'
+
+  get 'tags/update'
+
+  get 'tags/destroy'
+
+  get 'tags/read'
+
   get 'chapters/add'
 
   get 'chapters/create'
