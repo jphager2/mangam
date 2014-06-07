@@ -15,6 +15,6 @@ module SessionsHelper
 
   def current_user
     user_id = cookies[:user_id]
-    @current_user || User.find(user_id) 
+    @current_user ||= User.find_by(id: user_id) 
   end
 end

@@ -16,3 +16,29 @@
 
 
  */
+
+
+.name.logo > * {
+  height: 30px;
+  display: inline-block;
+  font-family: GUBBLEBUM;
+}
+
+.title > * {
+  height: 30px;
+  display: inline-block;
+}
+
+.profile {
+  max-width: 200px;
+  border-radius: 100%;
+  border: 2px solid black;
+}
+
+.green {color: green;} 
+.yellow {color: #FFDC1A;}
+.red {color: red;}
+
+.title a {
+  color: white;
+}
