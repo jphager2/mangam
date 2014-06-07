@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'chapters/add'
+
+  get 'chapters/create'
+
+  get 'chapters/edit'
+
+  get 'chapters/update'
+
+  get 'chapters/destroy'
+
+  get 'chapters/read'
+
   get 'users/add'
 
   get 'users/create'
