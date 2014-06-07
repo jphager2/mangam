@@ -1,62 +1,45 @@
 Rails.application.routes.draw do
+
+  root "chapters#index"
+
+  get    'signup', to: "users#add"
+  get    'login',  to: "sessions#add"
+  delete 'logout', to: "sessions#destroy" 
+
   get 'sessionss/add'
-
-  get 'sessionss/create'
-
+  post 'sessionss/create'
   get 'sessionss/edit'
-
   get 'sessionss/update'
-
   get 'sessionss/destroy'
-
   get 'sessionss/read'
 
   get 'likes/add'
-
   get 'likes/create'
-
   get 'likes/edit'
-
   get 'likes/update'
-
   get 'likes/destroy'
-
   get 'likes/read'
 
   get 'tags/add'
-
   get 'tags/create'
-
   get 'tags/edit'
-
   get 'tags/update'
-
   get 'tags/destroy'
-
   get 'tags/read'
 
+  get 'chapters/index'
   get 'chapters/add'
-
   get 'chapters/create'
-
   get 'chapters/edit'
-
   get 'chapters/update'
-
   get 'chapters/destroy'
-
   get 'chapters/read'
 
   get 'users/add'
-
-  get 'users/create'
-
+  post 'users/create'
   get 'users/edit'
-
   get 'users/update'
-
   get 'users/destroy'
-
   get 'users/read'
 
   # The priority is based upon order of creation: first created -> highest priority.
