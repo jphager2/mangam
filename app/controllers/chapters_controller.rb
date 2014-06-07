@@ -1,4 +1,8 @@
 class ChaptersController < ApplicationController
+  def index
+    @chapters = Chapter.all
+  end
+
   def add
   end
 

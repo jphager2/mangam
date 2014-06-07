@@ -8,12 +8,80 @@
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
+    <nav class="top-bar hide-for-small">
+      <ul class="title-area">
+        <li class="name logo">
+          <h1>
+            <%= link_to "mangam", root_path, id: "logo-text" %>
+          </h1>
+          <%= image_tag asset_path("mangam-logo.png") %>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <% if signed_in? %>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "logout", "/logout", method: "delete" %>
+            </li>
+          <% else %>
+            <li class="divider"></li>
+            <li><%= link_to "login", "/login" %></li>
+          <% end %>
+        </ul>
+      </section>
+    </nav>
 
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <nav class="show-for-small">
+      <div class="off-canvas-wrap" data-offcanvas>
+        <div class="inner-wrap">
+          <nav class="tab-bar">
+            <section class="left-small">
+              <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+            </section>
+
+            <section class="middle tab-bar-section">
+              <div class="title">
+                <h1><%= link_to "mangam", root_path %></h1>
+                <%= image_tag asset_path("mangam-logo.png") %>
+              </div>
+            </section>
+
+          </nav>
+
+          <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+              <li><label>mangam</label></li>
+              <% if signed_in? %>
+                <li>
+                  <%= link_to "logout", "/logout", method: "delete" %>
+                </li>
+              <% else %>
+                <li><%= link_to "login", "/login" %></li>
+              <% end %>
+            </ul>
+          </aside>
+
+          <section class="main-section">
+            <div class="row">
+              <%= render 'layouts/main' %>
+            </div>
+          </section>
+
+          <a class="exit-off-canvas"></a>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="row hide-for-small">
+      <%= render 'layouts/main' %>
+    </div>      
   </body>
 </html>
