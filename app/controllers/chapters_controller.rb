@@ -1,6 +1,6 @@
 class ChaptersController < ApplicationController
   def index
-    @chapters = Chapter.all
+    @chapters = Chapter.all.reverse
   end
 
   def add
