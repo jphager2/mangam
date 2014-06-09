@@ -1,3 +1,34 @@
 // Place all the styles related to the Chapters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chapter {
+  width: 150px;
+  float: left;
+  height: 200px;
+  margin: 5px;
+}
+
+.chapter img {
+  height: 160px;
+}
+
+.chapter.promoted {
+  width: 250px;
+  float: left;
+  height: 300px;
+}
+
+.chapter.promoted img {
+  height: 210px;
+}
+
+.chapter.featured{
+  width: 300px;
+  float: left;
+  height: 400px;
+}
+
+.chapter.featured img {
+  height: 260px;
+}

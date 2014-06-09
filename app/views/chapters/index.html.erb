@@ -1,26 +1,21 @@
-    <table>
-      <thead></thead>
+<section>
+  <% @chapters.each do |chap| %>
+    <% types = ["promoted", "featured"] %>
+    <% 5.times {types << "normal"} %>
+    <% type = types.shuffle.first %>
+    <table class="chapter <%= type %>">
+      <thead>
+        <tr>
+          <th colspan="2">
+            <%= link_to action: :read, id: chap.id do %> 
+              <%= "#{chap.manga} #{chap.number}" %>
+            <% end %> 
+          </th>
+        </tr>
+      </thead>
       <tbody>
-        <% @chapters.each do |chap| %>
-          <tr>
-            <td colspan="2">
-              <%= link_to action: :read, id: chap.id do %> 
-                <h3><%= "#{chap.manga} #{chap.number}" %></h3>
-              <% end %> 
-            </td>
-          </tr>
-          <tr>
-            <!-- replace like and tag actions later with 
-                 web socket actions
-             -->
-            <td>
-              <%= link_to "like", controller: :likes, action: :create %>
-            </td>
-            <td>
-              <%= link_to "tag", controller: :tags, action: :add %> 
-          </td>
-          </tr>
-        <% end %>
+        <%= render 'layouts/like_tag_row' %> 
       <tbody>
     </table>
+  <% end %>
 </section>
