@@ -3,7 +3,15 @@
        web socket actions
    -->
   <td>
-    <%= link_to "like", "/likes/create/#{chap.id}", method: :post %>
+    <% if current_user.has_like(chap) %>
+      <span>
+        You like this! (
+      <%= link_to "unlike", "/likes/destroy/#{chap.id}", method: :delete %>
+        )
+      </span>
+    <% else %>
+      <%= link_to "like", "/likes/create/#{chap.id}", method: :post %>
+    <% end %>
   </td>
   <td>
     <%= link_to "tag", controller: :tags, action: :add %> 

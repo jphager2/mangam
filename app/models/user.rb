@@ -5,7 +5,13 @@ class User < ActiveRecord::Base
                     uniqueness: {case_sensitive: false}
   validates :password, length: {minimum: 6}
 
+  has_many :likes
+
   def authenticate(password)
     self if password == self.password
+  end
+
+  def has_like(chap)
+    Like.find_by(user_id: self.id, chapter_id: chap.id)
   end
 end
