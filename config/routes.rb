@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   delete 'likes/destroy/:id', to: "likes#destroy"
   get    'likes/read'
 
+  get    'tags',         to: "tags#index"
   post   'tags/add/:id', to: "tags#add"
   post   'tags/create'
   get    'tags/edit'

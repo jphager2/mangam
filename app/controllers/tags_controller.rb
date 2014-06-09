@@ -1,4 +1,8 @@
 class TagsController < ApplicationController
+  def index
+    @tags = Tag.all.sort_by {|tag| tag.name}
+  end
+
   def add
     @id = params[:id]
   end

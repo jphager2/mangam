@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}
 
   has_many :likes
-  has_many :tags, through: :user_tag_map
+  has_many :user_tag_maps
+  has_many :tags, through: :user_tag_maps
 
   def authenticate(password)
     self if password == self.password

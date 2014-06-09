@@ -1,0 +1,18 @@
+<section>
+  <table>
+    <thead>
+      <th>Tag</th>
+      <th>Chapters</th>
+      <th>Followers</th>
+    </thead>
+    <tbody>
+      <% @tags.each do |tag| %>
+        <tr>
+          <td><%= tag.name %></td>
+          <td><%= tag.chapters.length %></td>
+          <td><%= tag.users.length %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
