@@ -30,5 +30,14 @@
 }
 
 .chapter.featured img {
-  height: 260px;
+  height: 360px;
 }
+
+.chapter.full {
+  width: 80%;
+  min-height: 400px;
+}
+
+.chapter.full img {
+  min-height: 360px;
+} 
