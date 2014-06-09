@@ -8,11 +8,15 @@ class ChaptersController < ApplicationController
 
   def create
     Chapter.create(
-      manga: params[:manga], 
-      number: params[:number],
+      manga:     params[:manga], 
+      number:    params[:number],
+      image_url: params[:image_url] || '',
       #user_id: current_user.id
     )
     redirect_to root_path
+  rescue
+    flash[:alert] = "something went wrong while adding chapter"
+    redirect_to action: :add
   end
 
   def edit
