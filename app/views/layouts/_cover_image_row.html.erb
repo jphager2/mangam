@@ -1,6 +1,6 @@
 <tr>
   <td colspan="2">
-    <% src = chap.image_url || asset_path('no_image.png') %>
+    <% src = chap.image_url.blank? ? asset_path('no_image.png') : chap.image_url %>
     <%= image_tag src %>
   </td>
 </tr>
