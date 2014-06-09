@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'sessions/read'
 
   get 'likes/add'
-  get 'likes/create'
+  post 'likes/create/:id', to: "likes#create"
   get 'likes/edit'
   get 'likes/update'
   get 'likes/destroy'

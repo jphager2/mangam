@@ -1,14 +1,13 @@
 class LikesController < ApplicationController
-  def add
-  end
-
   def create
-  end
-
-  def edit
-  end
-
-  def update
+    user = current_user
+    id   = params[:id]
+    if user
+      Like.create(user_id: user.id, chapter_id: id)
+      redirect_to controller: :chapters, action: :read, id: id
+    else
+      redirect_to "/login"
+    end
   end
 
   def destroy

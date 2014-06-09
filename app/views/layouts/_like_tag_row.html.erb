@@ -3,7 +3,7 @@
        web socket actions
    -->
   <td>
-    <%= link_to "like", controller: :likes, action: :create %>
+    <%= link_to "like", "/likes/create/#{chap.id}", method: :post %>
   </td>
   <td>
     <%= link_to "tag", controller: :tags, action: :add %> 
