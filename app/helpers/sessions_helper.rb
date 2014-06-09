@@ -15,11 +15,12 @@ module SessionsHelper
   end
 
   def signed_in?
-    !current_user.nil?
+    !current_user.is_a?(Guest)
   end
 
   def current_user
     user_id = cookies[:user_id]
     @current_user ||= User.find_by(id: user_id) 
+    @current_user ||= User::Guest.new
   end
 end

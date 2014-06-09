@@ -14,4 +14,18 @@ class User < ActiveRecord::Base
   def has_like(chap)
     Like.find_by(user_id: self.id, chapter_id: chap.id)
   end
+
+  def like(chapter_id)
+    Like.create(user_id: self.id, chapter_id: chapter_id)
+  end
+end
+
+class Guest < User
+  def id
+    0
+  end
+
+  def like(chapter_id)
+    false
+  end
 end
