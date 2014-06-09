@@ -3,19 +3,6 @@
     <% types = ["promoted", "featured"] %>
     <% 5.times {types << "normal"} %>
     <% type = types.shuffle.first %>
-    <table class="chapter <%= type %>">
-      <thead>
-        <tr>
-          <th colspan="2">
-            <%= link_to action: :read, id: chap.id do %> 
-              <%= "#{chap.manga} #{chap.number}" %>
-            <% end %> 
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render 'layouts/like_tag_row' %> 
-      <tbody>
-    </table>
+    <%= render 'layouts/chapter', chap: chap, type: type %>
   <% end %>
 </section>

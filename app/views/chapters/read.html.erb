@@ -1,12 +1,4 @@
+<% chap = @chapter %>
 <section>
-  <table class="chapter full">
-    <thead>
-      <th colspan="2">
-        <%= "#{@chapter.manga} #{@chapter.number}" %>
-      </th>
-    </thead>
-    <tbody>
-      <%= render 'layouts/like_tag_row' %> 
-    </tbody>
-  </table>
+  <%= render 'layouts/chapter', chap: chap, type: 'full' %> 
 </section>

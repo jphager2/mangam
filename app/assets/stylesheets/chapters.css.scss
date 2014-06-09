@@ -10,7 +10,7 @@
 }
 
 .chapter img {
-  height: 160px;
+  max-height: 160px;
 }
 
 .chapter.promoted {
@@ -20,7 +20,7 @@
 }
 
 .chapter.promoted img {
-  height: 210px;
+  max-height: 210px;
 }
 
 .chapter.featured{
@@ -30,14 +30,15 @@
 }
 
 .chapter.featured img {
-  height: 360px;
+  max-height: 360px;
 }
 
 .chapter.full {
   width: 80%;
-  min-height: 400px;
 }
 
 .chapter.full img {
-  min-height: 360px;
+  width: 98%;
+  min-height: 360px; 
+  max-height: 1000px;
 } 
