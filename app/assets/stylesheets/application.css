@@ -18,10 +18,15 @@
  */
 
 
+.main-content {
+  min-height: 200px;
+}
+
 .name.logo > * {
   height: 30px;
   display: inline-block;
   font-family: GUBBLEBUM;
+  color: white;
 }
 
 .title > * {

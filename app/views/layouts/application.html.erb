@@ -16,16 +16,20 @@
   <body>
     <nav class="top-bar hide-for-small">
       <ul class="title-area">
-        <li class="name logo">
-          <h1>
-            <%= link_to "mangam", root_path, id: "logo-text" %>
-          </h1>
-          <%= image_tag asset_path("mangam-logo.png") %>
+        <li>
+          <%= link_to root_path, class: "name logo" do %>
+            <h1>mangam</h1>
+            <%= image_tag asset_path("mangam-logo.png") %>
+          <% end %>
         </li>
       </ul>
       <section class="top-bar-section">
         <ul class="right">
           <% if signed_in? %>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "add chapter", "/chapters/add" %>
+            </li>
             <li class="divider"></li>
             <li>
               <%= link_to "logout", "/logout", method: "delete" %>
@@ -50,8 +54,10 @@
 
             <section class="middle tab-bar-section">
               <div class="title">
-                <h1><%= link_to "mangam", root_path %></h1>
-                <%= image_tag asset_path("mangam-logo.png") %>
+                <%= link_to root_path, class: "name logo" do %>
+                  <h1 >mangam</h1>
+                  <%= image_tag asset_path("mangam-logo.png") %>
+                <% end %>
               </div>
             </section>
 
@@ -61,6 +67,9 @@
             <ul class="off-canvas-list">
               <li><label>mangam</label></li>
               <% if signed_in? %>
+                <li>
+                  <%= link_to "add chapter", "/chapters/add" %>
+                </li>
                 <li>
                   <%= link_to "logout", "/logout", method: "delete" %>
                 </li>
