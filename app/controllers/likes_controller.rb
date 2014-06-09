@@ -11,6 +11,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
+    Like.find(params[:id]).destroy
+    redirect_to root_path
   end
 
   def read

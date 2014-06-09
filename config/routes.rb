@@ -2,23 +2,20 @@ Rails.application.routes.draw do
 
   root "chapters#index"
 
-  get    'signup', to: "users#add"
+
   get    'login',  to: "sessions#add"
+  post   'sessions/create'
+  get    'sessions/edit'
+  get    'sessions/update'
   delete 'logout', to: "sessions#destroy" 
+  get    'sessions/read'
 
-  get 'sessions/add'
-  post 'sessions/create'
-  get 'sessions/edit'
-  get 'sessions/update'
-  get 'sessions/destroy'
-  get 'sessions/read'
-
-  get 'likes/add'
-  post 'likes/create/:id', to: "likes#create"
-  get 'likes/edit'
-  get 'likes/update'
-  get 'likes/destroy'
-  get 'likes/read'
+  get    'likes/add'
+  post   'likes/create/:id',  to: "likes#create"
+  get    'likes/edit'
+  get    'likes/update'
+  delete 'likes/destroy/:id', to: "likes#destroy"
+  get    'likes/read'
 
   get 'tags/add'
   get 'tags/create'
@@ -35,12 +32,12 @@ Rails.application.routes.draw do
   delete  'chapters/destroy'
   get     'chapters/read'
 
-  get 'users/add'
-  post 'users/create'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/destroy'
-  get 'users/read'
+  get    'signup', to: "users#add"
+  post   'users/create'
+  get    'users/edit'
+  get    'users/update'
+  delete 'users/destroy'
+  get    'users/read'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

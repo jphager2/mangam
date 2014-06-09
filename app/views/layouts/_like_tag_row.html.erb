@@ -3,10 +3,11 @@
        web socket actions
    -->
   <td>
-    <% if current_user.has_like(chap) %>
+    <% like = current_user.has_like(chap) %>
+    <% if like %>
       <span>
         You like this! (
-      <%= link_to "unlike", "/likes/destroy/#{chap.id}", method: :delete %>
+      <%= link_to "unlike", "/likes/destroy/#{like.id}", method: :delete %>
         )
       </span>
     <% else %>
