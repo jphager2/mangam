@@ -1,2 +1,17 @@
-<h1>Sessionss#add</h1>
-<p>Find me in app/views/sessionss/add.html.erb</p>
+<% if flash[:alert] %>
+  <section>
+    <p><%= flash[:alert] %></p>
+  </section>
+<% end %>
+
+<section>
+  <%= form_tag action: :create do %>
+    <%= label_tag :email, 'Email: ' %>
+    <%= text_field_tag :email %>
+    <br>
+    <%= label_tag :password, 'Password: ' %>
+    <%= password_field_tag :password %>
+    <br>
+    <%= submit_tag "Login" %>
+  <% end %>
+</section>
