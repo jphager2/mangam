@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     user[:email]    = params[:email]
     user[:password] = params[:password]
     if user.save
-      redirect_to controller: :sessions, action: :create,
-        email: user.email, password: user.password
+      sign_in(user)
+      redirect_to root_path
     else
       redirect_to action: :add 
     end

@@ -6,7 +6,12 @@ module SessionsHelper
   def sign_in(user)
     user_id = user.id 
     cookies.permanent[:user_id] = user_id
-    self.current_user = user
+    current_user = user
+  end
+
+  def sign_out
+    cookies.delete(:user_id)
+    current_user = nil
   end
 
   def signed_in?

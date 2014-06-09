@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   get    'login',  to: "sessions#add"
   delete 'logout', to: "sessions#destroy" 
 
-  get 'sessionss/add'
-  post 'sessionss/create'
-  get 'sessionss/edit'
-  get 'sessionss/update'
-  get 'sessionss/destroy'
-  get 'sessionss/read'
+  get 'sessions/add'
+  post 'sessions/create'
+  get 'sessions/edit'
+  get 'sessions/update'
+  get 'sessions/destroy'
+  get 'sessions/read'
 
   get 'likes/add'
   get 'likes/create'

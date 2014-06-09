@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}
 
   def authenticate(password)
-    self if password == user.password
+    self if password == self.password
   end
 end
