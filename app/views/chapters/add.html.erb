@@ -1,2 +1,11 @@
-<h1>Chapters#add</h1>
-<p>Find me in app/views/chapters/add.html.erb</p>
+<section>
+  <%= form_tag action: :create do %>
+    <%= label_tag :manga, 'Manga Name: ' %>
+    <%= text_field_tag :manga %>
+    <br>
+    <%= label_tag :number, 'Chapter Number: ' %>
+    <%= text_field_tag :number %>
+    <br>
+    <%= submit_tag "Add" %>
+  <% end %>
+</section>

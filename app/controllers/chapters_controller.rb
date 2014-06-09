@@ -7,6 +7,12 @@ class ChaptersController < ApplicationController
   end
 
   def create
+    Chapter.create(
+      manga: params[:manga], 
+      number: params[:number],
+      #user_id: current_user.id
+    )
+    redirect_to root_path
   end
 
   def edit
@@ -19,5 +25,6 @@ class ChaptersController < ApplicationController
   end
 
   def read
+    @chapter = Chapter.find(params[:id])
   end
 end
