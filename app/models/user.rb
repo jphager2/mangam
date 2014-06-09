@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
   def like(chapter_id)
     Like.create(user_id: self.id, chapter_id: chapter_id)
   end
+
+  def tag(name)
+    Tag.create(name: name)
+  end
 end
 
 class Guest < User
@@ -28,5 +32,9 @@ class Guest < User
 
   def like(chapter_id)
     false
+  end
+
+  def tag(name)
+    nil
   end
 end

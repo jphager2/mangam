@@ -17,20 +17,20 @@ Rails.application.routes.draw do
   delete 'likes/destroy/:id', to: "likes#destroy"
   get    'likes/read'
 
-  get 'tags/add'
-  get 'tags/create'
-  get 'tags/edit'
-  get 'tags/update'
-  get 'tags/destroy'
-  get 'tags/read'
+  post   'tags/add/:id', to: "tags#add"
+  post   'tags/create'
+  get    'tags/edit'
+  get    'tags/update'
+  delete 'tags/destroy'
+  get    'tags/read'
 
-  get     'chapters/index'
-  get     'chapters/add'
-  post    'chapters/create'
-  get     'chapters/edit'
-  get     'chapters/update'
-  delete  'chapters/destroy'
-  get     'chapters/read'
+  get    'chapters/index'
+  get    'chapters/add'
+  post   'chapters/create'
+  get    'chapters/edit'
+  get    'chapters/update'
+  delete 'chapters/destroy'
+  get    'chapters/read'
 
   get    'signup', to: "users#add"
   post   'users/create'

@@ -1,2 +1,9 @@
-<h1>Tags#add</h1>
-<p>Find me in app/views/tags/add.html.erb</p>
+<section>
+  <%= form_tag action: :create do %>
+    <%= label_tag :name, 'Tag Name: ' %>
+    <%= text_field_tag :name %>
+    <%= hidden_field_tag :id, @id %>
+    <br>
+    <%= submit_tag "Tag" %>
+  <% end %>
+</section>
