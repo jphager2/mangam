@@ -10,7 +10,7 @@ class TagsController < ApplicationController
   def create
     chapter_id = params[:id]
     name       = params[:name]
-    tag        = Tag.find_by(name: tag)
+    tag        = Tag.find_by(name: name)
 
     tag = current_user.tag(name) unless tag
 
