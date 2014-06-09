@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get    'tags/edit'
   get    'tags/update'
   delete 'tags/destroy'
-  get    'tags/read'
+  get    'tags/:name',   to: "tags#read"
 
   get    'chapters/index'
   get    'chapters/add'

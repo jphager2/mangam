@@ -8,7 +8,9 @@
     <tbody>
       <% @tags.each do |tag| %>
         <tr>
-          <td><%= tag.name %></td>
+          <td>
+            <%= link_to tag.to_s, "/tags/#{tag.name}" %>
+          </td>
           <td><%= tag.chapters.length %></td>
           <td><%= tag.users.length %></td>
         </tr>

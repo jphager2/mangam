@@ -1,2 +1,8 @@
-<h1>Tags#read</h1>
-<p>Find me in app/views/tags/read.html.erb</p>
+<article>
+  <h2><%= @tag.to_s %></h2>
+  <%= render "layouts/chapter_tiles", chapters: @chapters %>
+</article>
+
+
+
+

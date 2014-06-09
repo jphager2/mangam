@@ -1,8 +1,2 @@
-<section>
-  <% @chapters.each do |chap| %>
-    <% types = ["promoted", "featured"] %>
-    <% 5.times {types << "normal"} %>
-    <% type = types.shuffle.first %>
-    <%= render 'layouts/chapter', chap: chap, type: type %>
-  <% end %>
-</section>
+<%= render "layouts/chapter_tiles", chapters: @chapters %>
+

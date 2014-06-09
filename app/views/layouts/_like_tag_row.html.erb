@@ -1,6 +1,8 @@
 <tr>
   <td colspan="2">
-    <%= chap.tags.map {|t| t.to_s}.join(', ')  %> 
+    <% chap.tags.each do |tag| %> 
+      <%= link_to tag.to_s + ' ', "/tags/#{tag.name}" %>
+    <% end %>
   </td>
 </tr>
 

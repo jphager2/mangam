@@ -32,5 +32,11 @@ class TagsController < ApplicationController
   end
 
   def read
+    @tag = Tag.find_by(name: params[:name])
+    if @tag
+      @chapters = @tag.chapters
+    else
+      redirect_to action: :index
+    end
   end
 end
