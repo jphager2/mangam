@@ -1,9 +1,11 @@
-<table class="chapter <%= type %>">
-  <thead>
+<div class="chapter <%= type %>">
+  <div>
     <%= render 'layouts/chapter_title_row', chap: chap %> 
-  </thead>
-  <tbody>
+  </div>
+  <div>
     <%= render 'layouts/cover_image_row', chap: chap %> 
+  </div>
+  <div>
     <%= render 'layouts/like_tag_row', chap: chap %> 
-  </tbody>
-</table>
+  </div>
+</div>

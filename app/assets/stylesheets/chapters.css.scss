@@ -3,32 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .chapter {
-  width: 150px;
-  float: left;
-  height: 200px;
-  margin: 5px;
+  width: 25%;
+  border: 1px solid #CFCFCF;
 }
 
 .chapter img {
-  max-height: 160px;
 }
 
 .chapter.promoted {
-  width: 250px;
-  height: 300px;
+  width: 50%;
 }
 
 .chapter.promoted img {
-  max-height: 210px;
 }
 
 .chapter.featured{
-  width: 300px;
-  height: 400px;
+  width: 100%;
 }
 
 .chapter.featured img {
-  max-height: 360px;
 }
 
 .chapter.full {

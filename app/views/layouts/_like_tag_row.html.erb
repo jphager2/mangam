@@ -1,16 +1,14 @@
-<tr>
-  <td colspan="2">
-    <% chap.tags.each do |tag| %> 
-      <%= link_to tag.to_s + ' ', "/tags/#{tag.name}" %>
-    <% end %>
-  </td>
-</tr>
+<div>
+  <% chap.tags.each do |tag| %> 
+    <%= link_to tag.to_s + ' ', "/tags/#{tag.name}" %>
+  <% end %>
+</div>
 
-<tr>
+<div class="row">
   <!-- replace like and tag actions later with 
        web socket actions
    -->
-  <td>
+  <div class="small-6 columns">
     <% like = current_user.has_like(chap) %>
     <% if like %>
       <span>
@@ -21,8 +19,8 @@
     <% else %>
       <%= link_to "like", "/likes/create/#{chap.id}", method: :post %>
     <% end %>
-  </td>
-  <td>
+  </div>
+  <div class="small-6 columns">
     <%= link_to "+tag", "/tags/add/#{chap.id}", method: :post %> 
-  </td>
-</tr>
+  </div>
+</div>
