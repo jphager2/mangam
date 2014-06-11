@@ -9,6 +9,8 @@ gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+# Masonary
+gem 'masonry-rails', '~>0.2.1'
 # Foundation gems
 gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails', '~> 5.2.2.0'

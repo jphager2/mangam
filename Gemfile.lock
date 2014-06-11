@@ -56,6 +56,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    masonry-rails (0.2.1)
+      rails
     mime-types (1.25.1)
     minitest (5.3.3)
     multi_json (1.9.3)
@@ -131,6 +133,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 2.0.2)
+  masonry-rails (~> 0.2.1)
   pg
   rails (= 4.1.0)
   rails_12factor
