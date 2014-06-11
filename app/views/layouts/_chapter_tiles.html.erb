@@ -1,8 +1,8 @@
-<section id="container">
+<section id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
   <% chapters.each do |chap| %>
-    <% # types = ["promoted", "featured"] %>
+    <% #types = ["col3", "col4", "col5"] %>
     <% types = [] %>
-    <% 5.times {types << "normal"} %>
+    <% 5.times {types << "col2"} %>
     <% type = types.shuffle.first %>
     <%= render 'layouts/chapter', chap: chap, type: type %>
   <% end %>
