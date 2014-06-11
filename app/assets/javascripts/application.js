@@ -11,16 +11,31 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery_ujs
+//= require foundation
+//= require_tree .
 //= require masonry/jquery.masonry
 //= require masonry/jquery.event-drag
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
-//= require jquery.turbolinks
-//= require jquery_ujs
-//= require foundation
+
+$( window ).load( function(){
+  $( '.masonry-container' ).masonry(
+    { 
+      columnWidth: 60,
+      itemSelector: '.box', 
+      isFitWidth: true,
+      gutterWidth: 0
+    }).imagesLoaded(function() {
+       $('#masonry-container').masonry('reload');
+    });
+});
+
 //= require turbolinks
-//= require_tree .
-
-
 $(function(){ $(document).foundation(); });
+
+
+
+
