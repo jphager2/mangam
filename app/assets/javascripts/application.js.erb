@@ -41,7 +41,7 @@ $( window ).load( function(){
     itemSelector : '.box',     
     loading: {
     finishedMsg: 'No more pages to load.',
-    img: '/assets/masonry/loader.gif'
+    img: '<%= asset_path('loader.gif') %>'
     }
   },
   // trigger Masonry as a callback
