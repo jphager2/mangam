@@ -8,5 +8,5 @@
 </div>
 
 <nav id="page-nav">
-  <%= link_to 'more', "/chapters/index/#{@page + 1}" %>
+  <%= link_to 'more', "/chapters/#{params[:action]}/#{@page + 1}" %>
 </nav>
