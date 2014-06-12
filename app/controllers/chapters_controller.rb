@@ -6,6 +6,23 @@ class ChaptersController < ApplicationController
     @chapters = @chapters[(50*(@page-1))..(50*@page-1)]
   end
 
+  def popular
+    likes = Like
+      .select("chapter_id, count(chapter_id) as likes")
+      .group("chapter_id")
+      .order('likes desc')
+
+    median_likes = likes[likes.length/2].likes 
+    
+    chapter_ids_with_above_median_likes = likes
+      .having('count(chapter_id) > ?', 1)
+      .map(&:chapter_id)
+
+    @popular = Chapter.where(
+      "chapters.id in (?)", chapter_ids_with_above_median_likes
+    ).order('updated_at DESC')  
+  end
+
   def add
   end
 

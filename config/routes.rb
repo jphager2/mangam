@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get    'chapters/index'
   get    'chapters/index/:page', to: "chapters#index"
+  get    'chapters/popular'
   get    'chapters/add'
   post   'chapters/create'
   get    'chapters/edit'
