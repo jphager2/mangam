@@ -32,13 +32,14 @@
 .name.logo > * {
   height: 30px;
   display: inline-block;
-  font-family: GUBBLEBUM;
   color: white;
+  font-family: GUBBLEBUM;
 }
 
 .title > * {
   height: 30px;
   display: inline-block;
+  font-family: GUBBLEBUM;
 }
 
 .profile {
@@ -54,3 +55,4 @@
 .title a {
   color: white;
 }
+

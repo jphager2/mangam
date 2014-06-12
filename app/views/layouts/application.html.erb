@@ -25,6 +25,10 @@
       </ul>
       <section class="top-bar-section">
         <ul class="right">
+          <li class="divider"></li>
+          <li>
+            <%= link_to "popular", "/chapters/popular" %>
+          </li>
           <% if signed_in? %>
             <li class="divider"></li>
             <li>
@@ -32,7 +36,7 @@
             </li>
             <li class="divider"></li>
             <li>
-              <%= link_to "logout", "/logout", method: "delete" %>
+              <%= link_to "logout", "/logout", method: :delete %>
             </li>
           <% else %>
             <li class="divider"></li>
@@ -66,6 +70,7 @@
           <aside class="left-off-canvas-menu">
             <ul class="off-canvas-list">
               <li><label>mangam</label></li>
+              <li><%= link_to "popular", "/chapters/popular" %></li>
               <% if signed_in? %>
                 <li>
                   <%= link_to "add chapter", "/chapters/add" %>
