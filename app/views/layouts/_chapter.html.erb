@@ -1,11 +1,5 @@
-<div class="box <%= type %>">
-  <div>
-    <%= render 'layouts/chapter_title_row', chap: chap %> 
-  </div>
-  <div>
-    <%= render 'layouts/cover_image_row', chap: chap %> 
-  </div>
-  <div>
-    <%= render 'layouts/like_tag_row', chap: chap %> 
-  </div> 
+<div class="chapter box <%= type %>">
+  <%= render 'layouts/chapter_title_row', chap: chap %> 
+  <%= render 'layouts/cover_image_row', chap: chap %> 
+  <%= render 'layouts/like_tag_row', chap: chap %> 
 </div>

@@ -36,12 +36,6 @@
   font-family: GUBBLEBUM;
 }
 
-.title > * {
-  height: 30px;
-  display: inline-block;
-  font-family: GUBBLEBUM;
-}
-
 .profile {
   max-width: 200px;
   border-radius: 100%;
@@ -52,7 +46,4 @@
 .yellow {color: #FFDC1A;}
 .red {color: red;}
 
-.title a {
-  color: white;
-}
 

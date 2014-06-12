@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .masonry-container {
-  background: #CFCFCF;
+  background: #FDFDFD;
   padding: 5px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -29,6 +29,37 @@
   max-height: 1000px;
 } 
 
+.tags.crow, .image.crow {
+  background-color: #555555;
+  min-height: 20px;
+  margin: 0 0 0 0;
+}
+
+.crow a, .crow {
+  color: white;
+}
+
+.crow a:hover {
+  color: #FF4800; 
+}
+
+.crow { 
+  margin: 0 0 0 0;
+  font-size: 19px;
+  font-family: GUBBLEBUM;
+}
+
+.image.crow {
+ padding-top: 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.tags.crow {
+  border-radius: 0 0 8px 8px;
+  padding: 5px;
+  word-wrap: break-word;
+}
+
 .box > * {
   text-align: center;
 }
@@ -36,6 +67,12 @@
 .box img {
   margin: 0 auto 0 auto;
 }
+
+.chapter.box {
+  background-color: #3D3D3D;
+  border: 1px solid #CCCCCC;
+}
+
 
 /* Infinite Scroll loader */
 #infscr-loading { 
@@ -53,3 +90,5 @@
      -moz-border-radius: 10px;
           border-radius: 10px;
 }
+
+

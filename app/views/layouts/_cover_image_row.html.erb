@@ -1,4 +1,6 @@
-<p>
+<div class="image crow">
   <% src = chap.image_url.blank? ? asset_path('no_image.png') : chap.image_url %>
-  <%= image_tag src %>
-</p>
+  <%= link_to action: :read, id: chap.id do %>
+    <%= image_tag src %>
+  <% end %>
+</div>

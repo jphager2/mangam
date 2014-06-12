@@ -1,18 +1,19 @@
-<div>
+<div class="tags crow">
   <% chap.tags.each do |tag| %> 
     <%= link_to tag.to_s + ' ', "/tags/#{tag.name}" %>
   <% end %>
 </div>
 
-<div class="row">
+<div class="row social-buttons crow">
   <!-- replace like and tag actions later with 
        web socket actions
    -->
-  <div class="small-6 columns">
+  <div class="small-8 columns">
     <% like = current_user.has_like(chap) %>
     <% if like %>
       <span>
-        You like this! (
+        You like this! 
+        <br>(
       <%= link_to "unlike", "/likes/destroy/#{like.id}", method: :delete %>
         )
       </span>
@@ -20,7 +21,7 @@
       <%= link_to "like", "/likes/create/#{chap.id}", method: :post %>
     <% end %>
   </div>
-  <div class="small-6 columns">
+  <div class="small-4 columns">
     <%= link_to "+tag", "/tags/add/#{chap.id}", method: :post %> 
   </div>
 </div>
