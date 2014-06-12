@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'mangdown'
+gem 'rubyzip'
+gem 'nokogiri'
+gem 'mangdown', '~> 0.8.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
