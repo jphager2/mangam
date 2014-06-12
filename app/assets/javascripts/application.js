@@ -22,15 +22,40 @@
 //= require masonry/modernizr-transitions
 
 $( window ).load( function(){
-  $( '.masonry-container' ).masonry(
-    { 
+  var $container = $( '.masonry-container' );
+  $container.imagesLoaded(function(){
+    $container.masonry({ 
       columnWidth: 60,
       itemSelector: '.box', 
       isFitWidth: true,
       gutterWidth: 0
-    }).imagesLoaded(function() {
-       $('#masonry-container').masonry('reload');
     });
+  });
+
+  $container.infinitescroll({
+      // selector for the paged navigation 
+    navSelector  : '#page-nav',    
+      // selector for the NEXT link 
+    nextSelector : '#page-nav a',  
+      // selector for all items you'll retrieve
+    itemSelector : '.box',     
+    loading: {
+    finishedMsg: 'No more pages to load.',
+    img: '/assets/masonry/loader.gif'
+    }
+  },
+  // trigger Masonry as a callback
+  function( newElements ) {
+    // hide new items while they are loading
+    var $newElems = $( newElements ).css({opacity: 0 });
+    // ensure that images load before adding to masonry layout
+    $newElems.imagesLoaded(function(){
+      // show elems now they're ready
+      $newElems.animate({opacity: 1 });
+      $container.masonry('appended',$newElems,true ); 
+    });
+  }
+  );
 });
 
 //= require turbolinks

@@ -6,3 +6,7 @@
     <%= render 'layouts/chapter', chap: chap, type: type %>
   <% end %>
 </div>
+
+<nav id="page-nav">
+  <%= link_to 'more', "/chapters/index/#{@page + 1}" %>
+</nav>

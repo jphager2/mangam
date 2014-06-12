@@ -1,6 +1,9 @@
 class ChaptersController < ApplicationController
   def index
-    @chapters = Chapter.all.reverse
+    @page = params[:page] || 1
+    @page = Integer(@page)
+    @chapters = Chapter.order('updated_at DESC')
+    @chapters = @chapters[(50*(@page-1))..(50*@page-1)]
   end
 
   def add
