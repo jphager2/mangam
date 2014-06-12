@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root "chapters#index"
 
-
   get    'login',  to: "sessions#add"
   post   'sessions/create'
   get    'sessions/edit'
@@ -26,8 +25,9 @@ Rails.application.routes.draw do
   get    'tags/:name',   to: "tags#read"
 
   get    'chapters/index'
-  get    'chapters/index/:page', to: "chapters#index"
+  get    'chapters/index/:page',   to: "chapters#index"
   get    'chapters/popular'
+  get    'chapters/popular/:page', to: "chapters#popular"
   get    'chapters/add'
   post   'chapters/create'
   get    'chapters/edit'

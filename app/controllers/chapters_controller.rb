@@ -1,26 +1,29 @@
 class ChaptersController < ApplicationController
   def index
-    @page = params[:page] || 1
-    @page = Integer(@page)
+    set_current_page!
     @chapters = Chapter.order('updated_at DESC')
-    @chapters = @chapters[(50*(@page-1))..(50*@page-1)]
+    set_chapters_for_current_page!
   end
 
   def popular
-    likes = Like
-      .select("chapter_id, count(chapter_id) as likes")
-      .group("chapter_id")
-      .order('likes desc')
+    set_current_page!
 
-    median_likes = likes[likes.length/2].likes 
+    likes = Like
+      .select("chapter_id, count(chapter_id) as total_likes")
+      .group("chapter_id")
+      .order('total_likes desc')
+
+    median_likes = likes[likes.length/2].total_likes 
     
     chapter_ids_with_above_median_likes = likes
-      .having('count(chapter_id) > ?', 1)
+      .having('count(chapter_id) >= ?', median_likes)
       .map(&:chapter_id)
 
-    @popular = Chapter.where(
+    @chapters = Chapter.where(
       "chapters.id in (?)", chapter_ids_with_above_median_likes
     ).order('updated_at DESC')  
+
+    set_chapters_for_current_page!
   end
 
   def add
