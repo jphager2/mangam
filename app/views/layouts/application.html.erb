@@ -38,13 +38,13 @@
               <!-- Right Nav Section -->
               <ul class="right">
                 <li class="divider hide-for-small"></li>
-                <li>
-                  <%= link_to "popular", "/chapters/popular" %>
-                </li>
+                <li><%= link_to "pop", "/chapters/popular" %></li>
+                <li class="divider hide-for-small"></li>
+                <li><%= link_to "tags", "/tags" %></li>
                 <% if signed_in? %>
                   <li class="divider hide-for-small"></li>
                   <li>
-                    <%= link_to "add chapter", "/chapters/add" %>
+                    <%= link_to "add", "/chapters/add" %>
                   </li>
                   <li class="divider hide-for-small"></li>
                   <li>
