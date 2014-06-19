@@ -12,7 +12,7 @@ class TagsController < ApplicationController
     name       = params[:name]
     tag        = Tag.find_by(name: name)
 
-    tag = current_user.tag(name) unless tag
+    tag ||= current_user.tag(name)
 
     ChapterTagMap.create(tag_id: tag.id, chapter_id: chapter_id)
 

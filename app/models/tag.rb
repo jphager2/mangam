@@ -14,6 +14,6 @@ class Tag < ActiveRecord::Base
   end
 
   def self.tagify(name)
-    name.gsub( /\s/, '_' ).gsub( /#+/, '') 
+    name.gsub( /\s/, '_' ).gsub( /#+/, '').downcase 
   end
 end
