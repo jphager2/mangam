@@ -1,6 +1,5 @@
 class Tag < ActiveRecord::Base
-  before_save {self.name = name.gsub(/\s/, '_')}
-  before_save {self.name = name.gsub(/#+/, '')}
+  before_save {self.name = Tag.tagify(self.name)}
 
   validates :name, presence: true, 
     uniqueness: { case_sensitive: false }
@@ -12,5 +11,9 @@ class Tag < ActiveRecord::Base
 
   def to_s
     "##{self.name}"
+  end
+
+  def self.tagify(name)
+    name.gsub( /\s/, '_' ).gsub( /#+/, '') 
   end
 end

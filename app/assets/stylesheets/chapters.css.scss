@@ -19,8 +19,15 @@
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+.chapter.narrow .crow h5 {
+  text-align: left;
+}
+
+.chapter.narrow .crow p {
+  text-align: center;
+}
+
 .chapter.full {
-  width: 80%;
 }
 
 .chapter.full img {
@@ -35,9 +42,17 @@
   margin: 0 0 0 0;
 }
 
-.crow a, .crow {
-  color: white;
+.crow p {
+  font-size: 18px;
 }
+
+.crow, .crow > * {
+  color: #FF4800; 
+}
+
+.crow a {
+  color: white;
+} 
 
 .crow a:hover {
   color: #FF4800; 
