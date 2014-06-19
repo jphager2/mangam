@@ -1,4 +1,6 @@
 <% chap = @chapter %>
 <section>
-  <%= render 'layouts/chapter', chap: chap, type: 'full' %> 
+  <div class="masonry-container transitions-enabled centered has-gutters clearfix">
+    <%= render 'layouts/chapter', chap: chap, type: 'full' %> 
+  </div>
 </section>

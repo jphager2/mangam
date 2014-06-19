@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'buapi', '~> 0.0.1'
 gem 'rubyzip'
 gem 'nokogiri'
 gem 'mangdown', '~> 0.8.4'
