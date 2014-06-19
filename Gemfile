@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'faraday', '~> 0.9.0'
 gem 'buapi', '~> 0.0.1'
 gem 'rubyzip'
 gem 'nokogiri'
