@@ -1,3 +1,5 @@
+<h1>Tags</h1>
+<%= render "layouts/slogan" %>
 <div class="masonry-container transitions-enabled centered has-gutters infinite-scroll clearfix">
   <% @tags.each do |tag| %>
     <%= link_to "/tags/#{tag.name}" do %>

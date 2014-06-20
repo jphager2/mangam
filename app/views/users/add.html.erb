@@ -1,11 +1,4 @@
-<section>
-  <%= form_tag action: :create do %>
-    <%= label_tag :email, 'Email: ' %>
-    <%= text_field_tag :email %>
-    <br>
-    <%= label_tag :password, 'Password: ' %>
-    <%= password_field_tag :password %>
-    <br>
-    <%= submit_tag "Signup" %>
-  <% end %>
-</section>
+<h1>Signup</h1>
+<%= render "layouts/slogan" %>
+<%= render "layouts/user_credentials_form", commit: "Signup" %>
+
