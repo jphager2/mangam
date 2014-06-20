@@ -1,20 +1,19 @@
-<section>
-  <table>
-    <thead>
-      <th>Tag</th>
-      <th>Chapters</th>
-      <th>Followers</th>
-    </thead>
-    <tbody>
-      <% @tags.each do |tag| %>
-        <tr>
-          <td>
-            <%= link_to tag.to_s, "/tags/#{tag.name}" %>
-          </td>
-          <td><%= tag.chapters.length %></td>
-          <td><%= tag.users.length %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
+<div class="masonry-container transitions-enabled centered has-gutters infinite-scroll clearfix">
+  <% @tags.each do |tag| %>
+    <%= link_to "/tags/#{tag.name}" do %>
+      <div class="chapter box normal">
+        <div class="crow">
+          <h3><%= link_to tag.to_s, "/tags/#{tag.name}" %></h3>
+        </div>
+        <div class="crow row">
+          <div class="small-6 columns">
+            chapters:<br> <%= tag.chapters.length %>
+          </div>
+          <div class="small-6 columns">
+            followers:<br> <%= tag.users.length %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
