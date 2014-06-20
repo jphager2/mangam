@@ -53,6 +53,6 @@ class ChaptersController < ApplicationController
 
   def read
     @chapter = Chapter.find(params[:id])
-    @dashboard = BU::Api.new.series_dashboard(@chapter.manga)
+    @dashboard = get_dashboard(@chapter.manga)
   end
 end

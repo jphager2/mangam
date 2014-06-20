@@ -9,37 +9,31 @@
         <div class="crow">
           <h2>BakaUpdates Profile</h2>
         </div>
-        <% if !@dashboard %>
-          <div class="crow">
-            <p>Looks like this manga can't be found...</p>
-          </div>
-        <% else %>
-          <div class="crow">
-            <h4><%= @chapter.manga %></h4>
-          </div>
-          <div class="crow">
-            <h5>Genres</h5>
-            <p>
-              <%= @dashboard[:genres].map {|genre| %>
-                <% "<a href=\"/tags/#{Tag.tagify(genre)}\">#{genre}</a>" %> 
-              <% }.join(', ').html_safe %>
-            </p>
-          </div>
-          <div class="crow">
-            <h5>Description</h5>
-            <p>
-              <%= @dashboard[:description][0...140] %>
-            </p>
-          </div>
-          <div class="crow">
-            <h5>Scanlators</h5>
-            <p>
-              <%= @dashboard[:scanlators].map {|scanlator| %>
-                <% "<a href=\"#{scanlator[:uri]}\">#{scanlator[:name]}</a>" %> 
-              <% }.join(', ').html_safe %>
-            </p>
-          </div>
-        <% end %>
+        <div class="crow">
+          <h4><%= @chapter.manga %></h4>
+        </div>
+        <div class="crow">
+          <h5>Genres</h5>
+          <p>
+            <%= @dashboard[:genres].map {|genre| %>
+              <% "<a href=\"/tags/#{Tag.tagify(genre)}\">#{genre}</a>" %> 
+            <% }.join(', ').html_safe %>
+          </p>
+        </div>
+        <div class="crow">
+          <h5>Description</h5>
+          <p>
+            <%= @dashboard[:description][0...140] + '...' %>
+          </p>
+        </div>
+        <div class="crow">
+          <h5>Scanlators</h5>
+          <p>
+            <%= @dashboard[:scanlators].map {|scanlator| %>
+              <% "<a href=\"#{scanlator[:uri]}\">#{scanlator[:name]}</a>" %> 
+            <% }.join(', ').html_safe %>
+          </p>
+        </div>
       </div>
     </div>
   </div>
