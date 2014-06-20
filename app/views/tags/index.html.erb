@@ -1,11 +1,19 @@
 <h1>Tags</h1>
 <%= render "layouts/slogan" %>
 <div class="masonry-container transitions-enabled centered has-gutters infinite-scroll clearfix">
+  <div class="chapter box col2">
+    <div class="crow">
+      <h3><%= link_to "#all_tags", '/tags' %>  </h3>
+      <h3><%= link_to "#pop_tags", '/tags' %>  </h3>
+      <h3><%= link_to "#trend_tags", '/tags' %></h3>
+    </div>
+  </div>
+
   <% @tags.each do |tag| %>
     <%= link_to "/tags/#{tag.name}" do %>
-      <div class="chapter box normal">
+      <div class="chapter box normal col2">
         <div class="crow">
-          <h3 class="link"><%= tag.name %></h3>
+          <h3 class="link"><%= tag %></h3>
         </div>
         <div class="row">
           <div class="crow small-6 columns">
