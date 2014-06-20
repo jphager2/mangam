@@ -16,13 +16,18 @@ Rails.application.routes.draw do
   delete 'likes/destroy/:id', to: "likes#destroy"
   get    'likes/read'
 
-  get    'tags',         to: "tags#index"
-  post   'tags/add/:id', to: "tags#add"
+  get    'tags',                to: "tags#index"
+  get    'tags/index/:page',    to: "tags#page"
+  get    'tags/popular'
+  get    'tags/popular/:page',  to: "tags#popular"
+  get    'tags/trending'
+  get    'tags/trending/:page', to: "tags#trending"
+  post   'tags/add/:id',        to: "tags#add"
   post   'tags/create'
   get    'tags/edit'
   get    'tags/update'
   delete 'tags/destroy'
-  get    'tags/:name',   to: "tags#read"
+  get    'tags/:name',          to: "tags#read"
 
   get    'chapters/index'
   get    'chapters/index/:page',   to: "chapters#index"

@@ -1,6 +1,20 @@
 class TagsController < ApplicationController
   def index
-    @tags = Tag.all.sort_by {|tag| tag.name}
+    set_current_page!
+    tags = Tag.all.sort_by {|tag| tag.name}
+    @tags = items_for_current_page(tags)
+  end
+
+  def popular
+    set_current_page!
+
+    tags = ChapterTagMap 
+      .select("tag_id, count(tag_id) as chapters")
+      .group("tag_id")
+      .order('chapters desc')
+
+    @tags = items_for_current_page(tags)
+      .map {|tag| Tag.find(tag.tag_id)}
   end
 
   def add
