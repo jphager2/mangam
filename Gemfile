@@ -19,6 +19,7 @@ gem 'masonry-rails', '~>0.2.1'
 # Foundation gems
 gem 'zurb-foundation', '~> 4.3.2'
 gem 'foundation-rails', '~> 5.2.2.0'
+gem 'foundation_rails_helper', '~> 0.4'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views

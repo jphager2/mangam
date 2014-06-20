@@ -1,10 +1,6 @@
 <div class="large-12 columns">
   <div class="main-content">
-    <% if flash[:alert] %>
-      <section class="alert">
-        <p><%= flash[:alert] %></p>
-      </section>
-    <% end %>
+    <%= display_flash_messages %>
     <%= yield %>
   </div>
 </div>

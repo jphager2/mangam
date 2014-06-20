@@ -27,15 +27,17 @@ class ChaptersController < ApplicationController
   end
 
   def add
+    @chapter = Chapter.new
   end
 
   def create
     Chapter.create(
-      manga:     params[:manga], 
-      number:    params[:number],
-      image_url: params[:image_url] || '',
+      manga:     params[:chapter][:manga], 
+      number:    params[:chapter][:number],
+      image_url: params[:chapter][:image_url] || '',
       #user_id: current_user.id
     )
+    flash[:notice] = "chapter added correctly"
     redirect_to root_path
   rescue
     flash[:alert] = "something went wrong while adding chapter"

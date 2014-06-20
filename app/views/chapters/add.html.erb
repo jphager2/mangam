@@ -1,53 +1,45 @@
 <section>
-  <%= form_tag action: :create do %>
-    <%= label_tag :image_url, 'Chapter Image Url: ' %>
-    <%= text_field_tag :image_url %>
-    <br>
-    <%= label_tag :manga, 'Manga Name: ' %>
-    <%= text_field_tag :manga %>
-    <br>
-    <%= label_tag :number, 'Chapter Number: ' %>
-    <%= text_field_tag :number %>
-    <br>
-    <%= submit_tag "Add" %>
+  <h1>Add</h1>
+  <h6 class="sub-heading">
+    Share your favorite manga with the world
+  </h6>
+
+  <%= form_for(@chapter, as: 'chapter', url: "/chapters/create") do |f| %>
+    <div class="row collapse">
+      <div class="small-3 large-2 columns">
+        <span class="prefix radius">Image URL</span>
+      </div>
+      <div class="small-9 large-10 columns">
+        <%= f.text_field :image_url, label: false, placeholder: "Enter an Image URL..." %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Manga</span>
+          </div>
+          <div class="small-9 columns">
+            <%= f.text_field :manga, label: false, placeholder: "e.g. 'Barefoot Gen'" %>
+          </div>
+        </div>
+      </div>
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Chp. #</span>
+          </div>
+          <div class="small-7 columns">
+            <%= f.text_field :number, label: false, placeholder: "e.g. '123'" %>
+          </div>
+          <div class="small-2 columns">
+            <%= f.submit "Add", class: "button postfix" %>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 </section>
-
-<form class="startHidden">
-  <div class="row collapse">
-    <div class="small-3 large-2 columns">
-      <span class="prefix radius">Image URL</span>
-    </div>
-    <div class="small-9 large-10 columns">
-      <input type="text" placeholder="Enter an Image URL...">
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <span class="prefix radius">Manga</span>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" placeholder="e.g. 'Barefoot Gen'">
-        </div>
-      </div>
-    </div>
-    <div class="large-6 columns">
-      <div class="row collapse">
-        <div class="small-3 columns">
-          <span class="prefix radius">Manga</span>
-        </div>
-        <div class="small-7 columns">
-          <input type="text" placeholder="e.g. '123'">
-        </div>
-        <div class="small-2 columns">
-          <a href="#" class="button postfix">Add</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
 
 <script>
   hideThis(".startHidden");
