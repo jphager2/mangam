@@ -11,7 +11,20 @@ class TagsController < ApplicationController
     tags = ChapterTagMap 
       .select("tag_id, count(tag_id) as chapters")
       .group("tag_id")
-      .order('chapters desc')
+      .order("chapters desc")
+
+    @tags = items_for_current_page(tags)
+      .map {|tag| Tag.find(tag.tag_id)}
+  end
+
+  def trending
+    set_current_page!
+
+    tags = ChapterTagMap 
+      .where(created_at: (Date.today - 3)..(Date.today + 1))
+      .select("tag_id, count(tag_id) as chapters")
+      .group("tag_id")
+      .order("chapters desc")
 
     @tags = items_for_current_page(tags)
       .map {|tag| Tag.find(tag.tag_id)}
