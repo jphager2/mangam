@@ -5,8 +5,8 @@ class UsersController < ApplicationController
 
   def create
     user = User.new
-    user[:email]    = params[:email]
-    user[:password] = params[:password]
+    user[:email]    = params[:user][:email]
+    user[:password] = params[:user][:password]
     if user.save
       sign_in(user)
       redirect_to root_path
