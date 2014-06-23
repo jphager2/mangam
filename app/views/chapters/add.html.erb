@@ -1,8 +1,6 @@
 <section>
   <h1>Add</h1>
-  <h6 class="sub-heading">
-    Share your favorite manga with the world
-  </h6>
+  <%= render "layouts/slogan" %>
 
   <%= form_for(@chapter, as: 'chapter', url: "/chapters/create") do |f| %>
     <div class="row collapse">

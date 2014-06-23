@@ -18,17 +18,20 @@ class TagsController < ApplicationController
   end
 
   def add
-    @id = params[:id]
+    @chapter = Chapter.find(params[:id])
+    @tag = Tag.new
   end
 
   def create
-    chapter_id = params[:id]
-    name       = params[:name]
-    tag        = Tag.find_by(name: name)
-
-    tag ||= current_user.tag(name)
-
-    ChapterTagMap.create(tag_id: tag.id, chapter_id: chapter_id)
+    chapter_id = params[:tag][:id]
+    names      = params[:tag][:name]
+    
+    names.split(/[,;]/).each do |name|
+      name = name.strip.downcase
+      tag        = Tag.find_by(name: name)
+      tag ||= current_user.tag(name)
+      ChapterTagMap.create(tag_id: tag.id, chapter_id: chapter_id)
+    end
 
     redirect_to controller: :chapters, action: :read, id: chapter_id
   rescue
