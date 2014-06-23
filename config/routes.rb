@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get    'tags/popular/:page',  to: "tags#popular"
   get    'tags/trending'
   get    'tags/trending/:page', to: "tags#trending"
-  post   'tags/add/:id',        to: "tags#add"
+  get    'tags/add/:id',        to: "tags#add"
   post   'tags/create'
   get    'tags/edit'
   get    'tags/update'

@@ -1,26 +1,35 @@
 <div class="masonry-container transitions-enabled centered has-gutters infinite-scroll clearfix">
-  <div class="chapter box col2">
-    <div class="crow">
-      <h3><%= link_to "#all_tags", '/tags' %>           </h3>
-      <h3><%= link_to "#pop_tags", '/tags/popular' %>   </h3>
-      <h3><%= link_to "#trend_tags", '/tags/trending' %></h3>
+  <% if @page <= 1 %>
+    <div class="chapter box col2">
+      <div class="crow">
+        <h3><%= link_to "#all_tags", '/tags' %>           </h3>
+        <h3><%= link_to "#pop_tags", '/tags/popular' %>   </h3>
+        <h3><%= link_to "#trend_tags", '/tags/trending' %></h3>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <% @tags.each do |tag| %>
     <%= link_to "/tags/#{tag.name}" do %>
-      <div class="chapter box normal col2">
+      <% users = tag.users.length %>
+      <% chapters = tag.chapters.length %>
+      <% col_size = 2 %>
+      <% col_size += 1 if chapters >= 10 %>
+      <% col_size += 1 if chapters >= 10 %>
+      <% col_size += 1 if users >= 50 %>
+      <% col_size += 1 if users >= 50 %>
+      <div class="chapter box normal col<%= col_size %>">
         <div class="crow">
           <h3 class="link"><%= tag %></h3>
         </div>
         <div class="row">
           <div class="crow small-6 columns">
             <h6>chapters:</h6> 
-            <p class="crow counter"><%= tag.chapters.length %></p>
+            <p class="crow counter"><%= chapters %></p>
           </div>
           <div class="crow small-6 columns">
             <h6>followers:</h6> 
-            <p class="counter"><%= tag.users.length %></p>
+            <p class="counter"><%= users %></p>
           </div>
         </div>
       </div>
