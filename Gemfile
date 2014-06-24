@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'faraday', '~> 0.9.0'
-gem 'buapi', '~> 0.0.1'
+gem 'buapi', '~> 0.0.2'
 gem 'rubyzip'
 gem 'nokogiri'
 gem 'mangdown', '~> 0.8.4'
