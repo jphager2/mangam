@@ -46,4 +46,20 @@
 .yellow {color: #FFDC1A;}
 .red {color: red;}
 
+.feedback {
+  font-family: GUBBLEBUM;
+  font-size: 25px;
+  border: 1px solid black;
+  background-color: #010101;
+  position: fixed;
+  bottom: 0;
+  right: 0; 
+}
 
+.feedback a {
+  color: #FF4800; 
+}
+
+.feedback a:hover {
+  color: white;
+}
