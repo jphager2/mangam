@@ -3,53 +3,50 @@
   <%= render "layouts/slogan" %>
 
   <%= form_for(@chapter, as: 'chapter', url: "/chapters/create") do |f| %>
-    <div class="row collapse">
-      <div class="small-3 large-2 columns">
-        <span class="prefix radius">Image URL</span>
-      </div>
-      <div class="small-9 large-10 columns">
-        <%= f.url_field :image_url, label: false, placeholder: "Enter an Image URL..." %>
+    <div class="startHidden"> 
+      <div class="row">
+        <div class="large-6 columns">
+          <div class="row collapse">
+            <div class="small-3 columns">
+              <span class="prefix radius">Manga</span>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :manga, label: false, placeholder: "e.g. 'Barefoot Gen'" %>
+            </div>
+            <% if flash[:error] =~ /manga/ %>
+              <small class="error medium input-text error">
+                can't be blank
+              </small>
+            <% end %>
+          </div>
+        </div>
+        <div class="large-6 columns">
+          <div class="row collapse">
+            <div class="small-3 columns">
+              <span class="prefix radius">Chp. #</span>
+            </div>
+            <div class="small-9 columns">
+              <%= f.text_field :number, label: false, placeholder: "e.g. '123'" %>
+            </div>
+            <% if flash[:error] =~ /number/ %>
+              <small class="error medium input-text error">
+                can't be blank
+              </small>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="large-6 columns">
-        <div class="row collapse">
-          <div class="small-3 columns">
-            <span class="prefix radius">Manga</span>
-          </div>
-          <div class="small-9 columns">
-            <%= f.text_field :manga, label: false, placeholder: "e.g. 'Barefoot Gen'" %>
-          </div>
-          <% if flash[:error] =~ /manga/ %>
-            <small class="error medium input-text error">
-              can't be blank
-            </small>
-          <% end %>
-        </div>
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <span class="prefix radius">Image URL</span>
       </div>
-      <div class="large-6 columns">
-        <div class="row collapse">
-          <div class="small-3 columns">
-            <span class="prefix radius">Chp. #</span>
-          </div>
-          <div class="small-7 columns">
-            <%= f.text_field :number, label: false, placeholder: "e.g. '123'" %>
-          </div>
-          <div class="small-2 columns">
-            <%= f.submit "Add", class: "button postfix" %>
-          </div>
-          <% if flash[:error] =~ /number/ %>
-            <small class="error medium input-text error">
-              can't be blank
-            </small>
-          <% end %>
-        </div>
+      <div class="small-7 columns">
+        <%= f.url_field :image_url, label: false, placeholder: "Enter an Image URL..." %>
+      </div>
+      <div class="small-2 columns">
+        <%= f.submit "Add", class: "button postfix" %>
       </div>
     </div>
   <% end %>
 </section>
-
-<script>
-  hideThis(".startHidden");
-</script>
-
