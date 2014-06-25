@@ -23,7 +23,9 @@
         <div class="crow">
           <h5>Description</h5>
           <p>
-            <%= @dashboard[:description][0...140] + '...' %>
+            <%= link_to "http://www.mangaupdates.com/series.html?id=#{@dashboard[:id]}" do %>
+              <%= @dashboard[:description][0...140] + '...' %>
+            <% end %>
           </p>
         </div>
         <div class="crow">
