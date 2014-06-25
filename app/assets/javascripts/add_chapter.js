@@ -29,7 +29,7 @@ $(document).ready( function(){
       
       function mangaReader() {
         //if it matches a regexp
-        reg = /(?:mangareader\.net\/)((?:\w|\-)+)\/(\d+)/;
+        reg = /(?:mangareader.net|mangapanda.com)\/((?:\w|\-)+)\/(\d+)/;
         match = input.val().match(reg); 
         if (checkMatch(match)) {insertValues(match);}
       };
