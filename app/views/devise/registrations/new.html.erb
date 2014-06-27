@@ -1,18 +1,67 @@
-<h2>Sign up</h2>
+<header><h2>Signup</h2></header>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<section>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <%= devise_error_messages! %>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Email</span>
+          </div>
+          <div class="small-9 columns">
+            <%= f.email_field :email, label: false, placeholder: "user@example.com", autofocus: true %>
+          </div>
+          <% if flash[:error] =~ /email/ %>
+            <small class="error medium input-text error">
+              can't be blank
+            </small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Password</span>
+          </div>
+          <div class="small-9 columns">
+            <%= f.password_field :password, label: false, placeholder: "********", autofocus: true, autocomplete: "off" %>
+          </div>
+          <% if flash[:error] =~ /password/ %>
+            <small class="error medium input-text error">
+              can't be blank
+            </small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Password Confirmation</span>
+          </div>
+          <div class="small-7 columns">
+            <%= f.password_field :password_confirmation, label: false, autocomplete: "off" %>
+          </div>
+          <div class="small-2 columns">
+            <%= f.submit "Signup", class: "button postfix" %>
+          </div>
+          <% if flash[:error] =~ /password/ %>
+            <small class="error medium input-text error">
+              can't be blank
+            </small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="small-6 columns">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</section>

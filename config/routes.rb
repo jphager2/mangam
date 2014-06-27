@@ -1,14 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root "chapters#index"
+  devise_for :users, :path => '/', :path_names => { :sign_in => 'login', :sign_up => 'signup', :sign_out => 'logout'}
 
-  get    'login',  to: "sessions#add"
-  post   'sessions/create'
-  get    'sessions/edit'
-  get    'sessions/update'
-  delete 'logout', to: "sessions#destroy" 
-  get    'sessions/read'
+  root "chapters#index"
 
   get    'likes/add'
   post   'likes/create/:id',  to: "likes#create"
@@ -40,13 +34,6 @@ Rails.application.routes.draw do
   get    'chapters/update'
   delete 'chapters/destroy'
   get    'chapters/read'
-
-  get    'signup', to: "users#add"
-  post   'users/create'
-  get    'users/edit'
-  get    'users/update'
-  delete 'users/destroy'
-  get    'users/read'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
