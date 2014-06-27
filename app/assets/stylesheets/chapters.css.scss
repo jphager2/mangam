@@ -13,7 +13,10 @@
           border-radius: 5px;
 }
 
-.centered { margin: 0 auto; }
+.centered { 
+  margin: 0 auto; 
+  text-align: center;
+}
 
 .clearfix:before, .clearfix:after { content:""; display: table; }
 .clearfix:after { clear: both; }

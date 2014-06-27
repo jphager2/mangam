@@ -9,7 +9,7 @@
        web socket actions
    -->
   <div class="small-8 columns">
-    <% like = current_user.has_like(chap) %>
+    <% like = current_or_guest_user.has_like(chap) %>
     <% if like %>
       <span>
         You like this! 

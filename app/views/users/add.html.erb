@@ -1,4 +1,62 @@
-<h1>Signup</h1>
-<%= render "layouts/slogan" %>
-<%= render "layouts/user_credentials_form", commit: "Signup", object: @user %>
+<header><h2>Signup</h2></header>
 
+<section>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+    <%= devise_error_messages! %>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Email</span>
+          </div>
+          <div class="small-9 columns">
+            <%= f.email_field :email, label: false, placeholder: "user@example.com", autofocus: true %>
+          </div>
+          <% if flash[:error] =~ /email/ %>
+            <small class="error medium input-text error">
+              can't be blank
+            </small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Password</span>
+          </div>
+          <div class="small-9 columns">
+            <%= f.password_field :password, label: false, placeholder: "********", autofocus: true, autocomplete: "off" %>
+          </div>
+          <% if flash[:error] =~ /password/ %>
+            <small class="error medium input-text error">
+              can't be blank
+            </small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 columns">
+        <div class="row collapse">
+          <div class="small-3 columns">
+            <span class="prefix radius">Password Confirmation</span>
+          </div>
+          <div class="small-7 columns">
+            <%= f.password_field :password_confirmation, label: false, autocomplete: "off" %>
+          </div>
+          <div class="small-2 columns">
+            <%= f.submit "Signup", class: "button postfix" %>
+          </div>
+          <% if flash[:error] =~ /password/ %>
+            <small class="error medium input-text error">
+              can't be blank
+            </small>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</section>

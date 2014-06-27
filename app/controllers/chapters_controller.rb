@@ -31,6 +31,7 @@ class ChaptersController < ApplicationController
   end
 
   def create
+    authenticate_user!
     chap = Chapter.new(
       manga:     params[:chapter][:manga], 
       number:    params[:chapter][:number],

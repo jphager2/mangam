@@ -1,4 +1,7 @@
 class LikesController < ApplicationController
+
+  before_action :authenticate_user!
+
   def create
     user = current_user
     id   = params[:id]
@@ -11,7 +14,9 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    Like.find(params[:id]).destroy
+    like = Like.find(params[:id])
+    like.destroy if like.user_id == current_user.id
+
     redirect_to root_path
   end
 
