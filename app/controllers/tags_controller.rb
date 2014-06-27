@@ -31,11 +31,13 @@ class TagsController < ApplicationController
   end
 
   def add
+    authenticate_user!
     @chapter = Chapter.find(params[:id])
     @tag = Tag.new
   end
 
   def create
+    authenticate_user!
     chapter_id = params[:tag][:id]
     names      = params[:tag][:name]
     
