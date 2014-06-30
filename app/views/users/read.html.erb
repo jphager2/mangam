@@ -1,2 +1,26 @@
-<h1>Users#read</h1>
-<p>Find me in app/views/users/read.html.erb</p>
+<header>
+  <h1><%= @user.email %></h1>
+</header>
+
+<section>
+  <table>
+    <thead>
+      <th>Recent Likes</th>
+    </thead>
+    <tbody>
+      <% @user.likes.each do |like| %>
+        <tr><td><%= Chapter.find(like.chapter_id).title %></td></tr>
+      <% end %>
+    </tbody>
+  </table>
+  <table>
+    <thead>
+      <th>Recent Tags</th>
+    </thead>
+    <tbody>
+      <% @user.tags.each do |tag| %>
+        <tr><td><%= tag.name %></td></tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
