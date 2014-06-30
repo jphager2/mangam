@@ -3,24 +3,44 @@
 </header>
 
 <section>
-  <table>
-    <thead>
-      <th>Recent Likes</th>
-    </thead>
-    <tbody>
-      <% @user.likes.each do |like| %>
-        <tr><td><%= Chapter.find(like.chapter_id).title %></td></tr>
-      <% end %>
-    </tbody>
-  </table>
-  <table>
-    <thead>
-      <th>Recent Tags</th>
-    </thead>
-    <tbody>
-      <% @user.tags.each do |tag| %>
-        <tr><td><%= tag.name %></td></tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="large-6 columns">
+      <table>
+        <thead>
+          <th>Recent Likes</th>
+        </thead>
+        <tbody>
+          <% @user.likes.each do |like| %>
+            <tr><td><%= Chapter.find(like.chapter_id).title %></td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="large-6 columns">
+      <table>
+        <thead>
+          <th>Following Tags</th>
+        </thead>
+        <tbody>
+          <% @user.follows.each do |tag| %>
+            <tr><td><%= tag.name %></td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <table>
+        <thead>
+          <th>Recent Tags</th>
+        </thead>
+        <tbody>
+          <% @user.tags.each do |tag| %>
+            <tr><td><%= tag.name %></td></tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
