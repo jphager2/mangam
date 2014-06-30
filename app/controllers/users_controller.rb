@@ -25,5 +25,6 @@ class UsersController < ApplicationController
   end
 
   def read
+    @user = User.find(params[:id])
   end
 end
