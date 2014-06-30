@@ -40,12 +40,17 @@ class TagsController < ApplicationController
     authenticate_user!
     chapter_id = params[:tag][:id]
     names      = params[:tag][:name]
+    user       = current_user
     
     names.split(/[,;]/).each do |name|
       name = name.strip.downcase
-      tag        = Tag.find_by(name: name)
-      tag ||= current_user.tag(name)
-      ChapterTagMap.create(tag_id: tag.id, chapter_id: chapter_id)
+      tag  = Tag.find_by(name: name)
+      tag ||= user.tag(name)
+      ChapterTagMap.create(
+        tag_id:     tag.id, 
+        chapter_id: chapter_id, 
+        user_id:    user.id,
+      )
     end
 
     redirect_to controller: :chapters, action: :read, id: chapter_id
