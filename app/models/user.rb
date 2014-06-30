@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   has_many :likes
   has_many :user_tag_maps
-  has_many :tags, through: :user_tag_maps
+  has_many :chapter_tag_maps
+  has_many :tags, through: :chapter_tag_maps, source: :tag
+  has_many :follows, through: :user_tag_maps, source: :tag
 
   def authenticate(password)
     self if password == self.password
