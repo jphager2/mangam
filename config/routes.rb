@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root "chapters#index"
 
-  get "account/:id", to: "users#read"
+  get "accounts/:id", to: "users#read"
 
   get    'likes/add'
   post   'likes/create/:id',  to: "likes#create"
