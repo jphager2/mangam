@@ -69,7 +69,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mangdown (0.8.4)
+    mangdown (0.8.5)
     masonry-rails (0.2.1)
       rails
     mime-types (1.25.1)
@@ -159,7 +159,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks (~> 2.0.2)
-  mangdown (~> 0.8.4)
+  mangdown (~> 0.8.5)
   masonry-rails (~> 0.2.1)
   nokogiri
   pg
