@@ -4,7 +4,7 @@ gem 'faraday', '~> 0.9.0'
 gem 'buapi', '~> 0.0.2'
 gem 'rubyzip'
 gem 'nokogiri'
-gem 'mangdown', '~> 0.8.4'
+gem 'mangdown', '~> 0.8.5'
 
 #authentication
 gem 'devise', '~> 3.2.4'
