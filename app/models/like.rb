@@ -5,4 +5,17 @@ class Like < ActiveRecord::Base
 
   belongs_to :chapter
   belongs_to :user
+
+  class MedianLikes
+    def likes
+      @likes ||= Like
+        .select("chapter_id, count(chapter_id) as total_likes")
+        .group("chapter_id")
+        .order('total_likes desc')
+    end
+
+    def median
+      @median ||= likes[likes.length/2].total_likes
+    end
+  end
 end
