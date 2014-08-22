@@ -2,7 +2,7 @@
 <section>
   <div class="row">
     <div class="medium-7 large-9 columns">
-      <%= render 'layouts/chapter', chap: chap, type: 'full' %> 
+    <%= render 'layouts/chapter', chap: chap, type: 'full' %> 
     </div>
     <div class="medium-5 large-3 columns">
       <div class="chapter box narrow">
@@ -15,25 +15,25 @@
         <div class="crow">
           <h5>Genres</h5>
           <p>
-            <%= @dashboard[:genres].map {|genre| %>
-              <% "<a href=\"/tags/#{Tag.tagify(genre)}\">#{genre}</a>" %> 
-            <% }.join(', ').html_safe %>
+          <%= @dashboard[:genres].map {|genre| %>
+            <% "<a href=\"/tags/#{Tag.tagify(genre)}\">#{genre}</a>" %> 
+          <% }.join(', ').html_safe %>
           </p>
         </div>
         <div class="crow">
           <h5>Description</h5>
           <p>
-            <%= link_to "http://www.mangaupdates.com/series.html?id=#{@dashboard[:id]}" do %>
-              <%= @dashboard[:description][0...140] + '...' %>
-            <% end %>
+          <%= link_to "http://www.mangaupdates.com/series.html?id=#{@dashboard[:id]}" do %>
+            <%= @dashboard[:description][0...140] + '...' %>
+          <% end %>
           </p>
         </div>
         <div class="crow">
           <h5>Scanlators</h5>
           <p>
-            <%= @dashboard[:scanlators].map {|scanlator| %>
-              <% "<a href=\"#{scanlator[:uri]}\">#{scanlator[:name]}</a>" %> 
-            <% }.join(', ').html_safe %>
+          <%= @dashboard[:scanlators].map {|scanlator| %>
+            <% "<a href=\"#{scanlator[:uri]}\">#{scanlator[:name]}</a>" %> 
+          <% }.join(', ').html_safe %>
           </p>
         </div>
       </div>
