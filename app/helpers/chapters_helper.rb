@@ -10,8 +10,8 @@ module ChaptersHelper
   end
 
   def get_dashboard(manga)
-    BU::Api.new.series_dashboard(manga)
-  rescue NoMethodError
+    BU::Api.new.dashboard(manga)
+  rescue Object 
     NullDashboard.new
   end
 
