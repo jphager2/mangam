@@ -4,6 +4,7 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  host: <%= ENV["PG_HOST"] %>
 
 development:
   <<: *default
@@ -12,7 +13,6 @@ development:
   # Set these in .bashrc or .bash_profile
   username: <%= ENV["PG_USER"] %> 
   password: <%= ENV["PG_PASS"] %>
-  host: localhost
   
 test:
   <<: *default
@@ -21,4 +21,3 @@ test:
   # Set these in .bashrc or .bash_profile
   username: <%= ENV["PG_USER"] %> 
   password: <%= ENV["PG_PASS"] %>
-  host: localhost
