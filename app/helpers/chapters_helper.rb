@@ -15,11 +15,12 @@ module ChaptersHelper
     NullDashboard.new
   end
 
-  class NullDashboard < Hash
+  class NullDashboard 
+    attr_reader :genres, :description, :scanlators
     def initialize
-      self[:genres]      = []
-      self[:description] = "Looks like we can't find this manga"
-      self[:scanlators]  = []
+      @genres      = []
+      @description = "Looks like we can't find this manga"
+      @scanlators  = []
     end
   end 
 end

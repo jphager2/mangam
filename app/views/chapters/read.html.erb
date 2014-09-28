@@ -22,7 +22,7 @@
         <div class="crow">
           <h5>Description</h5>
           <p>
-          <%= link_to @dashboard.url do %>
+          <%= link_to BU.absolute_url(@dashboard.url) do %>
             <%= @dashboard.description[0...140] + '...' %>
           <% end %>
           </p>
