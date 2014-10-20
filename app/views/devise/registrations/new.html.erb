@@ -45,7 +45,7 @@
             <span class="prefix radius">Password Confirmation</span>
           </div>
           <div class="small-7 columns">
-            <%= f.password_field :password_confirmation, label: false, autocomplete: "off" %>
+            <%= f.password_field :password_confirmation, label: false, placeholder: "********", autofocus: true, autocomplete: "off" %>
           </div>
           <div class="small-2 columns">
             <%= f.submit "Signup", class: "button postfix" %>
