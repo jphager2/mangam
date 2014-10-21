@@ -6,17 +6,23 @@ class Like < ActiveRecord::Base
   belongs_to :chapter
   belongs_to :user
 
-  class MedianLikes
-    def likes
-      @likes ||= Like
-        .select("chapter_id, count(chapter_id) as total_likes")
-        .group("chapter_id")
-        .order('total_likes desc')
-    end
+  def self.popular_chapter_ids
+    chapter_likes = ordered_chapter_totals
+    median_like   = chapter_likes[chapter_likes.length/2]
 
-    def median
-      return [] if likes.empty?
-      @median ||= likes[likes.length/2].total_likes
-    end
+    return [] unless median_like
+
+    min_pop_likes = median_like.total_likes
+    
+    chapter_likes.having('count(chapter_id) >= ?', min_pop_likes)
+      .map(&:chapter_id) 
+  end
+
+  def self.ordered_chapter_totals
+    return [] if Like.count.zero?
+    Like
+      .select("chapter_id, count(chapter_id) as total_likes")
+      .group("chapter_id")
+      .order('total_likes desc')
   end
 end

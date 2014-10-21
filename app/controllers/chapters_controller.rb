@@ -8,14 +8,8 @@ class ChaptersController < ApplicationController
   def popular
     set_current_page!
 
-    median_likes = Like::MedianLikes.new
-
-    chapter_ids_with_above_median_likes = median_likes.likes
-      .having('count(chapter_id) >= ?', median_likes.median)
-      .map(&:chapter_id)
-
     @chapters = Chapter.where(
-      "chapters.id in (?)", chapter_ids_with_above_median_likes
+      "chapters.id in (?)", Like.popular_chapter_ids
     ).order('updated_at DESC')  
 
     set_chapters_for_current_page!
