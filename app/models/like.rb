@@ -15,6 +15,7 @@ class Like < ActiveRecord::Base
     end
 
     def median
+      return [] if likes.empty?
       @median ||= likes[likes.length/2].total_likes
     end
   end

@@ -20,3 +20,6 @@
 *.swo
 *.swa
 *~
+
+# Ignore Secrets
+/config/secrets.yml
