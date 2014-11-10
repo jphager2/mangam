@@ -1,0 +1,11 @@
+cs:
+  popular: "nejlepsi"
+  tag:
+    one: "tag"
+    other: "tagy"
+  add: "plus"
+  login: "login"
+  logout: "logout"
+  signup: "signup"
+
+  

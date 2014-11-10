@@ -2,42 +2,45 @@ Rails.application.routes.draw do
 
   devise_for :users, :path => '/', path_names: { sign_in: 'login', sign_up: 'signup', sign_out: 'logout'}
 
-  root "chapters#index"
+  scope "(:locale)", locale: /en|cs/ do
 
-  get "accounts/:id", to: "users#read"
+    get "accounts/:id", to: "users#read"
 
-  get    'likes/add'
-  post   'likes/create/:id',  to: "likes#create"
-  get    'likes/edit'
-  get    'likes/update'
-  delete 'likes/destroy/:id', to: "likes#destroy"
-  get    'likes/read'
+    get    'likes/add'
+    post   'likes/create/:id',  to: "likes#create"
+    get    'likes/edit'
+    get    'likes/update'
+    delete 'likes/destroy/:id', to: "likes#destroy"
+    get    'likes/read'
 
-  get    'tags',                to: "tags#index"
-  get    'tags/index/:page',    to: "tags#page"
-  get    'tags/popular'
-  get    'tags/popular/:page',  to: "tags#popular"
-  get    'tags/trending'
-  get    'tags/trending/:page', to: "tags#trending"
-  get    'tags/add/:id',        to: "tags#add"
-  post   'tags/create'
-  get    'tags/edit'
-  get    'tags/update'
-  delete 'tags/destroy'
-  get    'tags/:name',          to: "tags#read"
+    get    'tags',                to: "tags#index"
+    get    'tags/index/:page',    to: "tags#page"
+    get    'tags/popular'
+    get    'tags/popular/:page',  to: "tags#popular"
+    get    'tags/trending'
+    get    'tags/trending/:page', to: "tags#trending"
+    get    'tags/add/:id',        to: "tags#add"
+    post   'tags/create'
+    get    'tags/edit'
+    get    'tags/update'
+    delete 'tags/destroy'
+    get    'tags/:name',          to: "tags#read"
 
-  get    'chapters/index'
-  get    'chapters/index/:page',   to: "chapters#index"
-  get    'chapters/popular'
-  get    'chapters/popular/:page', to: "chapters#popular"
-  get    'chapters/add'
-  post   'chapters/create'
-  get    'chapters/edit'
-  get    'chapters/update'
-  delete 'chapters/destroy'
-  get    'chapters/read'
+    get    'chapters/index'
+    get    'chapters/index/:page',   to: "chapters#index"
+    get    'chapters/popular'
+    get    'chapters/popular/:page', to: "chapters#popular"
+    get    'chapters/add'
+    post   'chapters/create'
+    get    'chapters/edit'
+    get    'chapters/update'
+    delete 'chapters/destroy'
+    get    'chapters/read'
+  end
 
+  get '/:locale', to: "chapters#index"
 
+  root to: "chapters#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
