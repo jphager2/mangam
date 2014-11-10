@@ -30,7 +30,7 @@ class TagsController < ApplicationController
       .map {|tag| Tag.find(tag.tag_id)}
   end
 
-  def add
+  def new 
     authenticate_user!
     @chapter = Chapter.find(params[:id])
     @tag = Tag.new
@@ -68,7 +68,7 @@ class TagsController < ApplicationController
   def destroy
   end
 
-  def read
+  def show 
     @tag = Tag.find_by(name: params[:name])
     if @tag
       @chapters = @tag.chapters

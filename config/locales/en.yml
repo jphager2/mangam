@@ -21,6 +21,12 @@
 
 en:
   popular: "pop"
+  like: 
+    one: "like"
+    other: "likes"
+    verb: "like"
+  unlike:
+    verb: "unlike"
   tag:
     one: "tag"
     other: "tags"
@@ -28,3 +34,4 @@ en:
   login: "login"
   logout: "logout"
   signup: "signup"
+  feedback: "Give Us Feedback!" 

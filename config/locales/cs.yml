@@ -1,11 +1,18 @@
 cs:
-  popular: "nejlepsi"
+  popular: "populární"
+  like: 
+    one: "like"
+    other: "liky"
+    verb: "like"
+  unlike:
+    verb: "unlike"
   tag:
     one: "tag"
     other: "tagy"
-  add: "plus"
-  login: "login"
-  logout: "logout"
-  signup: "signup"
+  add: "dát"
+  login: "přihlásit"
+  logout: "odhlásit"
+  signup: "zaregistrovat"
+  feedback: "Sdělte nám svůj názor"
 
   

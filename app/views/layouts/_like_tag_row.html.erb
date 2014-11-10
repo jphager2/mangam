@@ -1,6 +1,6 @@
 <div class="tags crow">
   <% chap.tags.each do |tag| %> 
-    <%= link_to tag.to_s + ' ', "/tags/#{tag.name}" %>
+    <%= link_to tag.to_s + ' ', tag_path(tag) %>
   <% end %>
 </div>
 
@@ -14,14 +14,14 @@
       <span>
         You like this! 
         <br>(
-      <%= link_to "unlike", "/likes/destroy/#{like.id}", method: :delete %>
+      <%= link_to t('unlike.verb'), unlike_path(like), method: :delete %>
         )
       </span>
     <% else %>
-      <%= link_to "like", "/likes/create/#{chap.id}", method: :post %>
+      <%= link_to t('like.verb'), like_path(chap), method: :post %>
     <% end %>
   </div>
   <div class="small-4 columns">
-    <%= link_to "+tag", "/tags/add/#{chap.id}" %> 
+    <%= link_to "+tag", new_tag_path(id: chap.id) %> 
   </div>
 </div>

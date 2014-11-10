@@ -19,7 +19,4 @@ class LikesController < ApplicationController
 
     redirect_to root_path
   end
-
-  def read
-  end
 end
