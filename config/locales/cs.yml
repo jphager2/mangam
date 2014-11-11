@@ -56,3 +56,4 @@ cs:
       unlock: "Neobdrželi odemknout návod?"
     phrases:
       omniauth: "Přihlásit se %{provider}"
+      password_instructions: "Pošlete mi resetovat pokyny hesla" 

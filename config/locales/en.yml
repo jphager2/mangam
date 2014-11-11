@@ -77,3 +77,4 @@ en:
       unlock: "Didn't receive unlock instructions?"
     phrases:
       omniauth: "Login with %{provider}" 
+      password_instructions: "Send me reset password instructions" 

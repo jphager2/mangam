@@ -1,41 +1,41 @@
-<header><h2>Login</h2></header>
+<header><h2><%= t(:login).capitalize %></h2></header>
 
 <section>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
     <div class="row collapse">
       <div class="small-3 columns">
-        <span class="prefix radius">Email</span>
+        <span class="prefix radius"><%= t(:email).capitalize %></span>
       </div>
       <div class="small-9 columns">
         <%= f.email_field :email, label: false, placeholder: "user@example.com", autofocus: true %>
       </div>
       <% if flash[:error] =~ /email/ %>
         <small class="error medium input-text error">
-          can't be blank
+          <%= t('errors.blank') %>
         </small>
       <% end %>
     </div>
     <div class="row collapse">
       <div class="small-3 columns">
-        <span class="prefix radius">Password</span>
+        <span class="prefix radius"><%= t(:password).capitalize %></span>
       </div>
       <div class="small-6 columns">
         <%= f.password_field :password, label: false, placeholder: "********", autofocus: true, autocomplete: "off" %>
       </div>
       <div class="small-3 columns">
-        <%= f.submit "Login", class: "button postfix" %>
+        <%= f.submit t(:login).capitalize, class: "button postfix" %>
       </div>
       <% if flash[:error] =~ /password/ %>
         <small class="error medium input-text error">
-          can't be blank
+          <%= t('errors.blank') %>
         </small>
       <% end %>
     </div>
     <div class="row">
       <div class="small-6 columns">
         <% if devise_mapping.rememberable? -%>
-          <%= f.check_box :remember_me %> 
+          <%= f.check_box :remember_me  %> 
         <% end -%>
       </div>
     </div>
