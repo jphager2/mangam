@@ -15,6 +15,7 @@ cs:
   tag:
     one: "tag"
     other: "tagy"
+  manga: "manga"
   chapter:
     one: "kapitola" 
     other: "kapitoly"
@@ -25,5 +26,33 @@ cs:
   login: "přihlásit"
   logout: "odhlásit"
   signup: "zaregistrovat"
+  email: "email"
+  password: "heslo"
+
+  actions:
+    chapter:
+      new: "Přidat nové kapitoly"
+
+  errors:
+    blank: "nemůže být prázdné"
+
+  abbreviations: 
+    chapter: "kap."
+    exempli_gratia: "např."
+
+  placeholders: 
+    image_url: "zadejte adresu URL obrázku..."
+    email: "uzivatel@priklad.com"
 
   feedback: "Sdělte nám svůj názor"
+  slogan: "Podělte se o své oblíbené manga s celým světem..."
+  image_url: "URL obrázku"
+  password_confirmation: "Potvrzení Hesla"
+
+  devise: 
+    questions: 
+      confirmation: "Neobdrželi jste potvrzující informaci?"
+      password: "Zapomněli jste Heslo?"
+      unlock: "Neobdrželi odemknout návod?"
+    phrases:
+      omniauth: "Přihlásit se %{provider}"

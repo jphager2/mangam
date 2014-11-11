@@ -36,6 +36,7 @@ en:
   tag:
     one: "tag"
     other: "tags"
+  manga: "manga"
   chapter:
     one: "chapter"
     other: "chapters"
@@ -46,5 +47,33 @@ en:
   login: "login"
   logout: "logout"
   signup: "signup"
+  email: "email"
+  password: "password"
+
+  actions:
+    chapter:
+      new: "Add New Chapter"
+
+  errors:
+    blank: "can't be blank"
+
+  abbreviations: 
+    chapter: "chp."
+    exempli_gratia: "e.g."
+
+  placeholders: 
+    image_url: "Enter an Image URL..."
+    email: "user@example.com"
 
   feedback: "Give Us Feedback!" 
+  slogan: "Share your favorite manga with the world..."
+  image_url: "Image URL"
+  password_confirmation: "Password Confirmation"
+
+  devise: 
+    questions: 
+      confirmation: "Didn't receive confirmation instructions?"
+      password: "Forgot your password?"
+      unlock: "Didn't receive unlock instructions?"
+    phrases:
+      omniauth: "Login with %{provider}" 

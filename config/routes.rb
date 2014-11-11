@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :path => '/', path_names: { sign_in: 'login', sign_up: 'signup', sign_out: 'logout' }
 
   scope "(:locale)", locale: /en|cs/ do
+    devise_for :users, :path => '/', path_names: { sign_in: 'login', sign_up: 'signup', sign_out: 'logout' }
 
     get 'users/:id', to: "users#show", as: :user
 
@@ -13,17 +13,6 @@ Rails.application.routes.draw do
     get 'tags/popular', to: "tags#popular", as: :popular_tags
     resources :tags
 
-=begin
-    get    'chapters/index'
-    get    'chapters/index/:page',   to: "chapters#index"
-    get    'chapters/popular'
-    get    'chapters/add'
-    post   'chapters/create'
-    get    'chapters/edit'
-    get    'chapters/update'
-    delete 'chapters/destroy'
-    get    'chapters/read'
-=end
     get 'chapters/popular', to: "chapters#popular", as: :popular_chapters
     resources :chapters
   end
