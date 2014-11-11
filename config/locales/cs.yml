@@ -1,5 +1,11 @@
 cs:
+  all_tags: "všechny_tagy"
+  trending_tags: "trendy_tagy"
+  popular_tags: "populární_tagy"
   popular: "populární"
+  pop: "pop"
+  trend: "trend"
+  trending: "trendy"
   like: 
     one: "like"
     other: "liky"
@@ -9,10 +15,15 @@ cs:
   tag:
     one: "tag"
     other: "tagy"
+  chapter:
+    one: "kapitola" 
+    other: "kapitoly"
+  follower:
+    one: "následovník" 
+    other: "následovníci"
   add: "dát"
   login: "přihlásit"
   logout: "odhlásit"
   signup: "zaregistrovat"
-  feedback: "Sdělte nám svůj názor"
 
-  
+  feedback: "Sdělte nám svůj názor"

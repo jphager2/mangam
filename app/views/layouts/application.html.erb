@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<% I18n.locale %>">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,18 +47,18 @@
               <!-- Right Nav Section -->
               <ul class="right">
                 <li class="divider hide-for-small"></li>
-                <li><%= link_to t(:popular), "/chapters/popular" %></li>
+                <li><%= link_to t(:pop), popular_chapters_path %></li>
                 <li class="divider hide-for-small"></li>
-                <li><%= link_to t(:tag, count: 2), "/tags" %></li>
+                <li><%= link_to t(:tag, count: 2), tags_path %></li>
                 <% if signed_in? %>
                   <li class="divider hide-for-small"></li>
                   <li>
-                    <%= link_to t(:add), "/chapters/add" %>
+                    <%= link_to t(:add), new_chapter_path %>
                   </li>
                   <li class="divider hide-for-small"></li>
                   <li>
                     <% user = current_user %>
-                    <%= link_to user.email, "accounts/#{user.id}" %>
+                    <%= link_to user.email, user_path(user) %>
                   </li>
                   <li class="divider hide-for-small"></li>
                   <li>
@@ -73,9 +73,9 @@
                 <li class="divider hide-for-small"></li>
                 <li>
                 <% if I18n.locale == :cs %>
-                  <%= link_to 'en', {controller: params[:controller], action: params[:action], locale: :en} %></li>
+                  <%= link_to 'en', {controller: params[:controller], action: params[:action], params: clean_params, locale: :en} %></li>
                 <% else %>
-                  <%= link_to 'cs', {controller: params[:controller], action: params[:action], locale: :cs} %></li>
+                  <%= link_to 'cs', {controller: params[:controller], action: params[:action], params: clean_params, locale: :cs} %></li>
                 <% end %>
               </ul>
             </section>

@@ -20,7 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  popular: "pop"
+  all_tags: "all_tags"
+  popular_tags: "popular_tags"
+  trending_tags: "trending_tags"
+  popular: "popular"
+  pop: "pop"
+  trend: "trend"
+  trending: "trending"
   like: 
     one: "like"
     other: "likes"
@@ -30,8 +36,15 @@ en:
   tag:
     one: "tag"
     other: "tags"
+  chapter:
+    one: "chapter"
+    other: "chapters"
+  follower:
+    one: "follower"
+    other: "followers"
   add: "add"
   login: "login"
   logout: "logout"
   signup: "signup"
+
   feedback: "Give Us Feedback!" 

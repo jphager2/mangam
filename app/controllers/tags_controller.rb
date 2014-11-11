@@ -15,6 +15,8 @@ class TagsController < ApplicationController
 
     @tags = items_for_current_page(tags)
       .map {|tag| Tag.find(tag.tag_id)}
+
+    render :index
   end
 
   def trending
@@ -28,17 +30,19 @@ class TagsController < ApplicationController
 
     @tags = items_for_current_page(tags)
       .map {|tag| Tag.find(tag.tag_id)}
+
+    render :index
   end
 
   def new 
     authenticate_user!
-    @chapter = Chapter.find(params[:id])
+    @chapter = Chapter.find(params[:chapter_id])
     @tag = Tag.new
   end
 
   def create
     authenticate_user!
-    chapter_id = params[:tag][:id]
+    chapter_id = params[:tag][:chapter_id]
     names      = params[:tag][:name]
     user       = current_user
     
@@ -59,21 +63,17 @@ class TagsController < ApplicationController
     redirect_to root_path
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
   end
 
   def show 
-    @tag = Tag.find_by(name: params[:name])
+    @tag = Tag.find(params[:id])
+
     if @tag
       @chapters = @tag.chapters
     else
       redirect_to action: :index
+      flash[:message] = "No tags found for #{params[:name]}"
     end
   end
 end

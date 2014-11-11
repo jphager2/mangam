@@ -1,7 +1,7 @@
 <h1>Add Tags for <%= @chapter.title %></h1> 
 <%= render "layouts/slogan" %>
 <section>
-  <%= form_for(@tag, url: "/tags/create") do |f| %>
+  <%= form_for @tag do |f| %>
     <div class="row collapse">
       <div class="small-3 columns">
         <span class="prefix radius">Tag(s)</span>
@@ -9,7 +9,7 @@
       <div class="small-7 columns">
         <%= f.text_field :name, label: false, placeholder: "(separate tags with ',' or ';')" %>
       </div>
-      <%= f.hidden_field :id, value: @chapter.id %>
+      <%= f.hidden_field :chapter_id, value: @chapter.id %>
       <div class="small-2 columns">
         <%= f.submit "Add", class: "button postfix" %>
       </div>

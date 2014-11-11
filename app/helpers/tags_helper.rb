@@ -5,6 +5,6 @@ module TagsHelper
   end
 
   def items_for_current_page(items)
-    items[(50*(@page-1))..(50*@page-1)] || []
+    items[(50*(@page-1))..(50*@page)] || [] 
   end
 end

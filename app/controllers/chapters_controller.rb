@@ -7,15 +7,15 @@ class ChaptersController < ApplicationController
 
   def popular
     set_current_page!
-
     @chapters = Chapter.where(
       "chapters.id in (?)", Like.popular_chapter_ids
     ).order('updated_at DESC')  
-
     set_chapters_for_current_page!
+
+    render :index
   end
 
-  def add
+  def new 
     @chapter = Chapter.new
   end
 
@@ -49,7 +49,7 @@ class ChaptersController < ApplicationController
   def destroy
   end
 
-  def read
+  def show 
     @chapter = Chapter.find(params[:id])
     @dashboard = get_dashboard(@chapter.manga)
   end

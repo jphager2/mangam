@@ -1,6 +1,6 @@
 <div class="image crow">
   <% src = chap.image_url.blank? ? asset_path('no_image.png') : chap.image_url %>
-  <%= link_to controller: :chapters, action: :read, id: chap.id do %> 
+  <%= link_to controller: :chapters, action: :show, id: chap.id do %> 
     <%= image_tag src %>
   <% end %>
 </div>

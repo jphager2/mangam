@@ -1,40 +1,31 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :path => '/', path_names: { sign_in: 'login', sign_up: 'signup', sign_out: 'logout'}
+  devise_for :users, :path => '/', path_names: { sign_in: 'login', sign_up: 'signup', sign_out: 'logout' }
 
   scope "(:locale)", locale: /en|cs/ do
 
-    get "accounts/:id", to: "users#read"
+    get 'users/:id', to: "users#show", as: :user
 
-
-    post   'likes/create/:id',  to: "likes#create", as: :like
+    post   'likes/create/:id', to: "likes#create", as: :like
     delete 'likes/destroy/:id', to: "likes#destroy", as: :unlike
 
+    get 'tags/trending', to: "tags#trending", as: :trending_tags
+    get 'tags/popular', to: "tags#popular", as: :popular_tags
     resources :tags
 
-    #get    'tags',                to: "tags#index"
-    #get    'tags/index/:page',    to: "tags#page"
-    #get    'tags/popular'
-    #get    'tags/popular/:page',  to: "tags#popular"
-    #get    'tags/trending'
-    #get    'tags/trending/:page', to: "tags#trending"
-    #get    'tags/add/:id',        to: "tags#add"
-    #post   'tags/create'
-    #get    'tags/edit'
-    #get    'tags/update'
-    #delete 'tags/destroy'
-    #get    'tags/:name',          to: "tags#read"
-
+=begin
     get    'chapters/index'
     get    'chapters/index/:page',   to: "chapters#index"
     get    'chapters/popular'
-    get    'chapters/popular/:page', to: "chapters#popular"
     get    'chapters/add'
     post   'chapters/create'
     get    'chapters/edit'
     get    'chapters/update'
     delete 'chapters/destroy'
     get    'chapters/read'
+=end
+    get 'chapters/popular', to: "chapters#popular", as: :popular_chapters
+    resources :chapters
   end
 
   get '/:locale', to: "chapters#index"

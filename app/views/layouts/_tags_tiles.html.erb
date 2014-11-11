@@ -1,16 +1,14 @@
 <div class="masonry-container transitions-enabled centered has-gutters infinite-scroll clearfix">
-  <% if @page <= 1 %>
-    <div class="chapter box col2">
-      <div class="crow">
-        <h3><%= link_to "#all_tags", '/tags' %>           </h3>
-        <h3><%= link_to "#pop_tags", '/tags/popular' %>   </h3>
-        <h3><%= link_to "#trend_tags", '/tags/trending' %></h3>
-      </div>
+  <div class="chapter box col2">
+    <div class="crow">
+      <h3><%= link_to '#'+t(:all_tags), tags_path %></h3>
+      <h3><%= link_to '#'+t(:popular_tags), popular_tags_path %></h3>
+      <h3><%= link_to '#'+t(:trending_tags), trending_tags_path %></h3>
     </div>
-  <% end %>
+  </div>
 
   <% @tags.each do |tag| %>
-    <%= link_to "/tags/#{tag.name}" do %>
+    <%= link_to tag_path(id: tag.id) do %>
       <% users = tag.users.length %>
       <% chapters = tag.chapters.length %>
       <% col_size = 2 %>
@@ -24,11 +22,11 @@
         </div>
         <div class="row">
           <div class="crow small-6 columns">
-            <h6>chapters:</h6> 
+            <h6><%= t(:chapter, count: 2) %>:</h6> 
             <p class="crow counter"><%= chapters %></p>
           </div>
           <div class="crow small-6 columns">
-            <h6>followers:</h6> 
+            <h6><%= t(:follower, count: 2) %>:</h6> 
             <p class="counter"><%= users %></p>
           </div>
         </div>
@@ -39,6 +37,6 @@
 
 <nav id="page-nav">
   <% if @page %>
-    <%= link_to 'more', "/tags/#{params[:action]}/#{@page + 1}" %>
+    <%= link_to 'more', { controller: params[:controller], action: params[:action], page: @page + 1} %>
   <% end %>
 </nav>
