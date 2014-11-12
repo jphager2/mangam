@@ -57,7 +57,7 @@ class TagsController < ApplicationController
       )
     end
 
-    redirect_to controller: :chapters, action: :read, id: chapter_id
+    redirect_to controller: :chapters, action: :show, id: chapter_id
   rescue
     flash[:alert] = "something went wrong while adding tag"
     redirect_to root_path

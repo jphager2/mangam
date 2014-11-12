@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     id   = params[:id]
 
     if user.like(id)
-      redirect_to controller: :chapters, action: :read, id: id
+      redirect_to controller: :chapters, action: :show, id: id
     else
       redirect_to "/login"
     end
