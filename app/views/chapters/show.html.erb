@@ -23,7 +23,7 @@
           <h5>Description</h5>
           <p>
           <%= link_to BU.absolute_url(@dashboard.url) do %>
-            <%= @dashboard.description[0...140] + '...' %>
+            <%= truncate(@dashboard.description, length: 240, omission: '...') %>
           <% end %>
           </p>
         </div>
@@ -31,7 +31,7 @@
           <h5>Scanlators</h5>
           <p>
           <%= @dashboard.scanlators.map {|scanlator| %>
-            <% link_to scanlator[:name], scanlator[:uri] %> 
+            <% link_to scanlator[:name], scanlator[:url] %> 
           <% }.join(', ').html_safe %>
           </p>
         </div>
