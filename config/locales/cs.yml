@@ -1,7 +1,7 @@
 cs:
-  all_tags: "všechny_tagy"
-  trending_tags: "trendy_tagy"
-  popular_tags: "populární_tagy"
+  all_tags: "#všechny"
+  trending_tags: "#trendy"
+  popular_tags: "#populární"
   popular: "populární"
   pop: "pop"
   trend: "trend"

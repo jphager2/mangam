@@ -7,7 +7,7 @@
     <div class="large-6 columns">
       <table>
         <thead>
-          <th>Recent Likes</th>
+          <th><%= t('.recent_likes') %></th>
         </thead>
         <tbody>
           <% @user.likes.each do |like| %>
@@ -19,7 +19,7 @@
     <div class="large-6 columns">
       <table>
         <thead>
-          <th>Following Tags</th>
+          <th><%= t('.following_tags') %></th>
         </thead>
         <tbody>
           <% @user.follows.each do |tag| %>
@@ -33,7 +33,7 @@
     <div class="large-6 columns">
       <table>
         <thead>
-          <th>Recent Tags</th>
+          <th><%= t('.recent_tags') %></th>
         </thead>
         <tbody>
           <% @user.tags.each do |tag| %>

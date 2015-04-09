@@ -1,0 +1,12 @@
+en:
+  tags:
+    tags: "#tags"
+    index:
+      title:
+        index: "#all tags"
+        popular: "#popular tags"
+        trending: "#trending tags"
+    new:
+      title: "add tags for %{chapter}"
+      hint: "(separate tags with ',' or ';')"
+

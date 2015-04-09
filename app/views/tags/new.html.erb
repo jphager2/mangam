@@ -1,17 +1,17 @@
-<h1>Add Tags for <%= @chapter.title %></h1> 
+<h1><%= t('.title', chapter: @chapter.title) %></h1> 
 <%= render "layouts/slogan" %>
 <section>
   <%= form_for @tag do |f| %>
     <div class="row collapse">
       <div class="small-3 columns">
-        <span class="prefix radius">Tag(s)</span>
+        <span class="prefix radius"><%= t('tags.tags') %></span>
       </div>
       <div class="small-7 columns">
-        <%= f.text_field :name, label: false, placeholder: "(separate tags with ',' or ';')" %>
+        <%= f.text_field :name, label: false, placeholder: t('.hint') %>
       </div>
       <%= f.hidden_field :chapter_id, value: @chapter.id %>
       <div class="small-2 columns">
-        <%= f.submit "Add", class: "button postfix" %>
+        <%= f.submit t('add'), class: "button postfix" %>
       </div>
     </div>
   <% end %>

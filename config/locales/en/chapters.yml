@@ -1,0 +1,8 @@
+en:
+  chapters:
+    index:
+      title: 
+        index: "chapters"
+        popular: "popular"
+    new:
+      title: "add new chapter"

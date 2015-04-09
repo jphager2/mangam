@@ -1,0 +1,12 @@
+cs:
+  tags:
+    tags: "#tags"
+    index:
+      title:
+        all_tags: "#všechny"
+        trending_tags: "#trendy"
+        popular_tags: "#populární"
+    new:
+      title: "přidat tagy pro \"%{chapter}\""
+      hint: "(oddělit tagy s ',' or ';')"
+

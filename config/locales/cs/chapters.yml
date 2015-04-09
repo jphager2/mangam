@@ -1,0 +1,8 @@
+cs:
+  chapters:
+    index:
+      title: 
+        index: "kapitoly"
+        popular: "populární"
+    new:
+      title: "přidat nové kapitoly"

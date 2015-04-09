@@ -20,9 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  all_tags: "all_tags"
-  popular_tags: "popular_tags"
-  trending_tags: "trending_tags"
+  all_tags: "#all"
+  popular_tags: "#popular"
+  trending_tags: "#trending"
   popular: "popular"
   pop: "pop"
   trend: "trend"
