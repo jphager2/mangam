@@ -1,6 +1,6 @@
 class AddSeedChapters < ActiveRecord::Migration
   def change
-    m = Mangdown::PopularManga.new('http://www.mangareader.net/popular', 100)
+    m = Mangdown::PopularManga.new('http://www.mangareader.net/popular', 10)
     m.mangas_list.each do |manga_md|
       begin
         manga = manga_md.to_manga 

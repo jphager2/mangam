@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
 
   def guest_user
-    @cached_guest_user ||= User
+    @cached_guest_user ||= Guest 
       .find(session[:guest_user_id] ||= create_guest_user.id)
   rescue ActiveRecord::RecordNotFound
     session[:guest_user_id] = nil
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_guest_user
-    guest = User.create( 
+    guest = Guest.create( 
       email: "guest_#{Time.now.to_i}#{rand(99)}@example.com"
     ) 
     guest.save!(validate: false)

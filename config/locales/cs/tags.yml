@@ -3,9 +3,9 @@ cs:
     tags: "#tags"
     index:
       title:
-        all_tags: "#všechny"
-        trending_tags: "#trendy"
-        popular_tags: "#populární"
+        index: "#všechny tagy"
+        trending_tags: "#trendy tagy"
+        popular_tags: "#populární tagy"
     new:
       title: "přidat tagy pro \"%{chapter}\""
       hint: "(oddělit tagy s ',' or ';')"

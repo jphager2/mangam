@@ -10,7 +10,7 @@ gem 'mangdown', '~> 0.8.5'
 gem 'devise', '~> 3.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
