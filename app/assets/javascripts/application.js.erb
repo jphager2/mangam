@@ -38,7 +38,7 @@ $( window ).load( function(){
       // selector for the NEXT link 
     nextSelector : '#page-nav a',  
       // selector for all items you'll retrieve
-    itemSelector : '.box',     
+    itemSelector : '.box:not(.null-box)',     
     loading: {
     finishedMsg: 'No more pages to load.',
     img: '<%= asset_path('loader.gif') %>'
