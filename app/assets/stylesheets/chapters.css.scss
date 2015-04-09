@@ -113,4 +113,41 @@
           border-radius: 10px;
 }
 
+.add-button {
+  height: 56px;
+  width: 56px;
+  background-color: #FF4800;
+  color: white;
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  border: 1px solid #FF4800;
+  border-radius: 100%;
+  z-index: 9;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(0,0,0,.16),0 6px 12px rgba(0,0,0,.32);
 
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  } 
+
+  div, span {
+    font-size: 3em;
+    display: inline-block;
+    padding: 0;
+    vertical-align: middle;
+  }
+
+  &:hover span {
+    transform: scale(1) rotate(90deg);
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+  }
+
+  span {
+    transform: scale(1) rotate(-90deg);
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+  }
+}

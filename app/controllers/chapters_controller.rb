@@ -1,4 +1,7 @@
 class ChaptersController < ApplicationController
+
+  before_action :authenticate_user!, except: [:index, :popular, :show]
+
   def index
     set_current_page!
     @chapters = Chapter.order('updated_at DESC')
@@ -20,7 +23,6 @@ class ChaptersController < ApplicationController
   end
 
   def create
-    authenticate_user!
     chap = Chapter.new(
       manga:     params[:chapter][:manga], 
       number:    params[:chapter][:number],

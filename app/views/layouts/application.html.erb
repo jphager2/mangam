@@ -88,6 +88,12 @@
       <%= render 'layouts/main' %>
     </div>      
 
+    <div class="add-button-container">
+      <%= link_to new_chapter_path do %>
+        <div class="add-button"><span>+<span></div>
+      <% end %>
+    </div>
+
     <footer class="feedback">
       <%= link_to t(:feedback), "https://github.com/jphager2/mangam/issues?labels=enhancement&page=1&state=open", target: "_blank" %>
     </footer>
