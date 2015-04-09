@@ -1,0 +1,6 @@
+en:
+  users:
+    show:
+      recent_likes: recent likes
+      following_tags: following tags
+      recent_tags: recent tags

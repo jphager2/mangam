@@ -67,13 +67,17 @@ class TagsController < ApplicationController
   end
 
   def show 
-    @tag = Tag.find(params[:id])
+    if params[:id]
+      @tag = Tag.where(id: params[:id]).first
+    else
+      @tag = Tag.find_by(name: params[:name])
+    end
 
     if @tag
       @chapters = @tag.chapters
     else
       redirect_to action: :index
-      flash[:message] = "No tags found for #{params[:name]}"
+      flash[:message]="No tags found for #{params[:id]||params[:name]}"
     end
   end
 end

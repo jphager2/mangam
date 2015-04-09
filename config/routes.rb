@@ -13,13 +13,13 @@ Rails.application.routes.draw do
     get 'tags/popular', to: "tags#popular", as: :popular_tags
     resources :tags
 
+    get 'tagged/:name', to: "tags#show", as: :tagged
+
     get 'chapters/popular', to: "chapters#popular", as: :popular_chapters
     resources :chapters
+
+    root to: "chapters#index"
   end
-
-  get '/:locale', to: "chapters#index"
-
-  root to: "chapters#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

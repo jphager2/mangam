@@ -8,7 +8,7 @@
   </div>
 
   <% @tags.each do |tag| %>
-    <%= link_to tag_path(id: tag.id) do %>
+    <%= link_to tag_path(tag.name) do %>
       <% users = tag.users.length %>
       <% chapters = tag.chapters.length %>
       <% col_size = 2 %>

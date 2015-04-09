@@ -1,0 +1,6 @@
+cs:
+  users:
+    show:
+      recent_likes: poslední liky
+      following_tags: následující tagy
+      recent_tags: poslední tagy
