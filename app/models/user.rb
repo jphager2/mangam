@@ -30,17 +30,3 @@ class User < ActiveRecord::Base
     Tag.create(name: name)
   end
 end
-
-class Guest < User
-  def id
-    0
-  end
-
-  def like(chapter_id)
-    false
-  end
-
-  def tag(name)
-    nil
-  end
-end

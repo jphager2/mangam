@@ -42,18 +42,17 @@ class ApplicationController < ActionController::Base
   end
 
   private
-    def logging_in
-      # put any code in here that occurs when a guest logs in as
-      # a user (e.g. save guest work as user's work)
-    end
+  def logging_in
+    # put any code in here that occurs when a guest logs in as
+    # a user (e.g. save guest work as user's work)
+  end
 
-    def create_guest_user
-      guest = User.create( 
-        email: "guest_#{Time.now.to_i}#{rand(99)}@example.com"
-      ) 
-      guest.save!(validate: false)
-      session[:guest_user_id] = guest.id
-      guest
-    end
-
+  def create_guest_user
+    guest = User.create( 
+      email: "guest_#{Time.now.to_i}#{rand(99)}@example.com"
+    ) 
+    guest.save!(validate: false)
+    session[:guest_user_id] = guest.id
+    guest
+  end
 end

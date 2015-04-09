@@ -1,27 +1,10 @@
-<div class="tags crow">
-  <% chap.tags.each do |tag| %> 
-    <%= link_to tag.to_s + ' ', tagged_path(tag.name) %>
-  <% end %>
-</div>
+<%= render 'layouts/tags_crow', chap: chap %>
 
 <div class="row social-buttons crow">
-  <!-- replace like and tag actions later with 
-       web socket actions
-   -->
   <div class="small-8 columns">
-    <% like = current_or_guest_user.has_like(chap) %>
-    <% if like %>
-      <span>
-        You like this! 
-        <br>(
-      <%= link_to t('unlike.verb'), unlike_path(like), method: :delete %>
-        )
-      </span>
-    <% else %>
-      <%= link_to t('like.verb'), like_path(chap), method: :post %>
-    <% end %>
+    <%= render 'layouts/like_button', chap: chap %>
   </div>
   <div class="small-4 columns">
-    <%= link_to "+tag", new_tag_path(chapter_id: chap.id) %> 
+    <%= render 'layouts/tag_button', chap: chap %>
   </div>
 </div>

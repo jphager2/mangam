@@ -1,0 +1,4 @@
+<% selector = "#chapter-#{@chapter.id} .like-button" %>
+<% html = j(render 'layouts/like_button', chap: @chapter) %>
+$('<%= selector %>').replaceWith('<%= html %>');
+$('.masonry-container').masonry('reload');

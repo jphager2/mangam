@@ -1,0 +1,13 @@
+<div class="like-button">
+  <% like = current_or_guest_user.has_like(chap) %>
+  <% if like %>
+    <span>
+      You like this! 
+      <br>(
+    <%= link_to t('unlike.verb'), unlike_path(like, format: :js), method: :delete, remote: true %>
+      )
+    </span>
+  <% else %>
+    <%= link_to t('like.verb'), like_path(chap, format: :js), method: :post, remote: true %>
+  <% end %>
+</div>
