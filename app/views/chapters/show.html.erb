@@ -40,15 +40,12 @@
   </div>
 </section>
 
-<div class="floating-button-container">
-  <%= like_to(@chapter) do %>
-    <div class="floating-button like-button"><span>like<span></div>
-  <% end %>
-</div>
+<div class="hover-area hidden">
+  <%= render 'layouts/floating_like_button' %>
 
-<div class="floating-button-container">
-  <%= link_to new_tag_path(chapter_id: @chapter.id) do %>
-    <div class="floating-button tag-button"><span>#tag<span></div>
-  <% end %>
+  <div class="floating-button-container">
+    <%= link_to new_tag_path(chapter_id: @chapter.id) do %>
+      <div class="floating-button tag-button hidden show-on-hover"><span>#tag<span></div>
+    <% end %>
+  </div>
 </div>
-
