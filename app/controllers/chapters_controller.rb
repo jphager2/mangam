@@ -53,6 +53,13 @@ class ChaptersController < ApplicationController
 
   def show 
     @chapter = Chapter.find(params[:id])
-    @dashboard = get_dashboard(@chapter.manga)
+    @dashboard = @chapter.dashboard
+
+    unless @dashboard && @dashboard.current?
+      @dashboard = get_dashboard(@chapter.manga)
+      unless @dashboard.is_a? NullDashboard
+        @dashboard = @chapter.set_dashboard_from_bu_api(@dashboard)
+      end
+    end
   end
 end

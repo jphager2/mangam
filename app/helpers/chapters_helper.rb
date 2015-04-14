@@ -1,7 +1,7 @@
 module ChaptersHelper
 
   def like_to(chapter, text = nil)
-    if like = current_user.has_like(chapter) 
+    if like = current_or_guest_user.has_like(chapter) 
       text ||= t('unlike.verb')
       options = { method: :delete, remote: true }
       if block_given?

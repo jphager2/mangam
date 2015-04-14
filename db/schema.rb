@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409131211) do
+ActiveRecord::Schema.define(version: 20150410141519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,35 @@ ActiveRecord::Schema.define(version: 20150409131211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
+    t.integer  "dashboard_id"
+  end
+
+  create_table "dashboards", force: true do |t|
+    t.string   "url",         default: ""
+    t.string   "title",       default: ""
+    t.text     "genres",      default: [], array: true
+    t.text     "description", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "likes", force: true do |t|
     t.integer  "user_id"
     t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scanlators", force: true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scanned_bies", force: true do |t|
+    t.integer  "scanlator_id"
+    t.integer  "dashboard_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

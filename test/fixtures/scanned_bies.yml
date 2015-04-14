@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scanlator_id: 1
+  dashboard_id: 1
+
+two:
+  scanlator_id: 1
+  dashboard_id: 1
